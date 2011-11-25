@@ -1,0 +1,47 @@
+<project name="ejb3 :: solution 01 :: webclient :: build" default="install-glassfish" basedir=".">
+	<condition property="maven.executable" value="mvn.bat" else="mvn"><os family="windows" /></condition>
+	
+	<target name="install-glassfish" description="compile all for Glassfish">
+		<exec executable="${maven.executable}">
+			<arg line="install"/>
+			<arg line="-P glassfish"/>
+		</exec>
+	</target>
+	
+	<target name="clean-glassfish" description="clean all for Glassfish">
+		<exec executable="${maven.executable}">
+			<arg line="clean"/>
+			<arg line="-P glassfish"/>
+		</exec>
+	</target>
+	
+	<target name="eclipse-glassfish" description="eclipse all for Glassfish">
+		<exec executable="${maven.executable}">
+			<arg line="eclipse:clean eclipse:eclipse"/>
+			<arg line="-P glassfish"/>
+		</exec>
+	</target>
+	
+	<target name="install-jboss" description="compile all for JBoss AS 5">
+		<exec executable="${maven.executable}">
+			<arg line="install"/>
+			<arg line="-P jboss5"/>
+		</exec>
+	</target>
+	
+	<target name="clean-jboss" description="clean all for JBoss AS 5">
+		<exec executable="${maven.executable}">
+			<arg line="clean"/>
+			<arg line="-P jboss5"/>
+		</exec>
+	</target>
+	
+	<target name="eclipse-jboss" description="eclipse all for JBoss AS 5">
+		<exec executable="${maven.executable}">
+			<arg line="eclipse:clean eclipse:eclipse"/>
+			<arg line="-P jboss5"/>
+		</exec>
+	</target>
+	
+	
+</project>

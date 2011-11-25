@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<servlet>
+		<servlet-name>TimeServlet</servlet-name>
+		<servlet-class>course.servlet.TimeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>WarenkorbServlet</servlet-name>
+		<servlet-class>course.servlet.WarenkorbServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>InjectedWarenkorbServlet</servlet-name>
+		<servlet-class>course.servlet.InjectedWarenkorbServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WarenkorbServlet</servlet-name>
+		<url-pattern>/WarenkorbServlet.html</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>InjectedWarenkorbServlet</servlet-name>
+		<url-pattern>/injected.html</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TimeServlet</servlet-name>
+		<url-pattern>/TimeServlet.html</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>WarenkorbServlet.html</welcome-file>
+	</welcome-file-list>
+</web-app>

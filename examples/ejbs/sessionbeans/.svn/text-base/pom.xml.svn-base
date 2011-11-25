@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>course.ejb3</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>course.ejb3</groupId>
+	<artifactId>ejb3.solution.01.sessionbeans</artifactId>
+	<packaging>ejb</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>Solution 01 SessionBeans</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>ejb-api</artifactId>
+			<version>3.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>glassfish</groupId>
+			<artifactId>appserv-rt.jar</artifactId>
+			<version>LATEST</version>
+			<scope>system</scope>
+			<systemPath>${env.GLASSFISH_HOME}/lib/appserv-rt.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>glassfish</groupId>
+			<artifactId>javaee.jar</artifactId>
+			<version>LATEST</version>
+			<scope>system</scope>
+			<systemPath>${env.GLASSFISH_HOME}/lib/javaee.jar</systemPath>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>solution.01.sessionbeans</finalName>
+	</build>
+
+</project>
