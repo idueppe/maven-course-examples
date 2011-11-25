@@ -1,0 +1,72 @@
+<project>
+  <parent>
+    <groupId>com.devzuz.mvnbook.proficio</groupId>
+    <artifactId>proficio</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>proficio-cli</artifactId>
+  <packaging>jar</packaging>
+  <name>Proficio Commandline Interface</name>
+  <dependencies>
+    <dependency>
+      <groupId>com.devzuz.mvnbook.proficio</groupId>
+      <artifactId>proficio-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.devzuz.mvnbook.proficio</groupId>
+      <artifactId>proficio-store-memory</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.devzuz.mvnbook.proficio</groupId>
+      <artifactId>proficio-store-xstream</artifactId>
+    </dependency>
+  </dependencies>
+
+  <!-- Profiles for the two assemblies to create for deployment -->
+
+  <profiles>
+    <!-- Profile which creates an assembly using the memory based store -->
+    <profile>
+      <id>memory</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <descriptors>
+                <descriptor>src/main/assembly/assembly-store-memory.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+      <activation>
+        <property>
+          <name>memory</name>
+        </property>
+      </activation>
+    </profile>
+    <!-- Profile which creates an assembly using the xstream based store -->
+    <profile>
+      <id>xstream</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <descriptors>
+                <descriptor>src/main/assembly/assembly-store-xstream.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+      <activation>
+        <property>
+          <name>xstream</name>
+        </property>
+      </activation>
+    </profile>
+  </profiles>
+</project>

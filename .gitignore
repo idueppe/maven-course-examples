@@ -1,5 +1,10 @@
 .classpath
 .project
-*/.settings/   
+.settings/   
+examples/*/.settings/
+examples/*/target/
+solution/*/.settings/
+solution/*/.target/
 sandbox/
 target/
+tmp/*

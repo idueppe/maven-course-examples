@@ -1,0 +1,66 @@
+<model>
+  <id>proficio</id>
+  <name>Proficio</name>
+  <description>Proficio's object model.</description>
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.devzuz.mvnbook.proficio.model</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class rootElement="true">
+      <name>Faq</name>
+      <version>1.0.0+</version>
+      <fields>
+        <field>
+          <name>id</name>
+          <version>1.0.0</version>
+          <type>int</type>
+          <identifier>true</identifier>
+        </field>
+        <field>
+          <name>name</name>
+          <version>1.0.0</version>
+          <type>String</type>
+        </field>
+        <field>
+          <name>description</name>
+          <version>1.0.0</version>
+          <type>String</type>
+        </field>        
+        <field>
+          <name>faqEntries</name>
+          <version>1.0.0</version>
+          <association>
+            <type>FaqEntry</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+      </fields>
+    </class>
+
+    <class>
+      <name>FaqEntry</name>
+      <version>1.0.0</version>
+      <fields>
+        <field>
+          <name>id</name>
+          <version>1.0.0</version>
+          <type>String</type>
+        </field>
+        <field>
+          <name>question</name>
+          <version>1.0.0</version>
+          <type>String</type>
+        </field>
+        <field>
+          <name>answer</name>
+          <version>1.0.0</version>
+          <type>String</type>
+        </field>
+      </fields>
+    </class>
+  </classes>
+</model>

@@ -1,0 +1,28 @@
+<assembly>
+  <id>xstream</id>
+  <formats>
+    <format>jar</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <includes>
+        <include>README*</include>
+        <include>LICENSE*</include>
+        <include>NOTICE*</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>target/classes</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+  </fileSets>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <excludes>
+        <exclude>junit:junit</exclude>
+        <exclude>com.devzuz.mvnbook.proficio:proficio-store-memory</exclude>
+      </excludes>
+    </dependencySet>
+  </dependencySets>
+</assembly>

@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>course.webservices</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>course.webservices</groupId>
+	<artifactId>ws07.jaxws.fraction.solution</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>Web Service 07 JAX-WS - Fraction Solution</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>jaxws-rt</artifactId>
+			<version>2.1.5</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.1.10</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>fraction</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>1.10</version>
+				<executions>
+					<execution>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>wsgen</goal>
+							<goal>wsimport</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sei>course.jaxws.fraction.FractionBean</sei>
+					<packageName>course.jaxws.generated</packageName>
+					<keep>true</keep>
+					<genWsdl>true</genWsdl>
+					<verbose>true</verbose>
+					<resourceDestDir>${project.build.directory}/resources-generated</resourceDestDir>
+					<wsdlDirectory>${project.build.directory}/resources-generated</wsdlDirectory>
+					<sourceDestDir>${project.build.directory}/sources-generated</sourceDestDir>
+					<wsdlLocation>http://localhost:9000/services?wsdl</wsdlLocation>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
