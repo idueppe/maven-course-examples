@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.crowdcode.maven</groupId>
+	<artifactId>ejb-jboss-simple</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>ejb-jboss-simple</name>
+    
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jboss.home>${env.JBOSS_HOME}</jboss.home>
+		<jboss.domain>default</jboss.domain>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-6.0</artifactId>
+			<version>1.0.0.Final</version>
+			<scope>provided</scope>
+			<type>pom</type>
+		</dependency>
+
+		<!--
+			Default Implementation that carries additional validators. Should be
+			removed in the event of the server using an alternate validations
+			implementation since the proprietary ones in hibernate won't be
+			available anymore
+		-->
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.0.0.GA</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+		<!-- JBoss Repository used for hibernate-validator 4.0.0.GA and Java-ee spec-->
+		<repository>
+			<id>repository.jboss.org</id>
+			<name>JBoss Repository</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<finalName>ejb-jboss-simple</finalName>
+		<plugins>
+			<!--  Facilitates downloading source and javadoc in Eclipse -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<wtpversion>2.0</wtpversion>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+
+
+			<!--  Ensures we are compiling at 1.6 level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+			<!-- JBoss AS plugin for command line deployment -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jboss-maven-plugin</artifactId>
+				<version>1.4.1</version>
+				<configuration>
+					<jbossHome>${jboss.home}</jbossHome>
+					<serverName>${jboss.domain}</serverName>
+					<fileNames>
+						<fileName>${project.build.directory}/${project.build.finalName}.war</fileName>
+					</fileNames>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

@@ -7,4 +7,5 @@ solution/*/.settings/
 solution/*/.target/
 sandbox/
 target/
+tmp/
 tmp/*

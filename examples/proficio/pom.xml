@@ -13,7 +13,16 @@
   </description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	</properties>             
+	
+	<modules>
+		<module>proficio-model</module>
+		<module>proficio-core</module>
+		<module>proficio-api</module>
+		<module>proficio-stores</module>
+		<module>proficio-cli</module>
+	</modules>
+	
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -76,13 +85,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<modules>
-		<module>proficio-model</module>
-		<module>proficio-api</module>
-		<module>proficio-core</module>
-		<module>proficio-stores</module>
-		<module>proficio-cli</module>
-	</modules>
+
 	<distributionManagement>
 		<site>
 			<id>mvnbook.site</id>
@@ -90,6 +93,8 @@
 			<url>file:///Users/idueppe/Sites/Proficio</url>
 		</site>
 	</distributionManagement>
+	
+	
 	<build>
 		<plugins>
 			<plugin>

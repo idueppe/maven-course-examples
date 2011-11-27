@@ -8,37 +8,44 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>JAX-WS Code Generation - Contract Frist Solution</name>
 	<url>http://maven.apache.org</url>
-                                               
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<dependencies>      
-		  <dependency>
-     		<groupId>javax</groupId>
-     		<artifactId>javaee-api</artifactId>
-     		<version>6.0</version>
-     		<scope>provided</scope>
-   		</dependency>
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<finalName>helloworld</finalName>
 		<plugins>
 			<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>jaxws-maven-plugin</artifactId>
-							<version>1.12</version>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>1.12</version>
 				<executions>
 					<execution>
+						<id>generate-hello-wsdl</id>
 						<phase>generate-test-sources</phase>
 						<goals>
 							<goal>wsgen</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>import-stocklevel</id>
+						<phase>generate-sources</phase>
+						<goals>
 							<goal>wsimport</goal>
 						</goals>
 					</execution>
 				</executions>
-				<configuration>               
+				<configuration>
 					<wsdlDirectory>${basedir}/src/main/wsdl</wsdlDirectory>
 					<sei>course.jaxws.hello.HelloBean</sei>
 					<packageName>course.jaxws.generated</packageName>
@@ -49,13 +56,13 @@
 					<sourceDestDir>${project.build.directory}/sources-generated</sourceDestDir>
 					<wsdlLocation>http://localhost:9000/services?wsdl</wsdlLocation>
 				</configuration>
-			</plugin>       
+			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
-				<configuration>                                
+				<configuration>
 					<encoding>UTF-8</encoding>
 					<source>1.6</source>
 					<target>1.6</target>
@@ -81,12 +88,13 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>			
-			
+			</plugin>
+
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -121,5 +129,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-		
+
 </project>
