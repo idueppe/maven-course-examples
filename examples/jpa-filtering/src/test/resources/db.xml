@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<dataset>
+
+ 	<customer id="1" firstName="Ingo" lastName="Dueppe" email="ingo.dueppe@dueppe.com"/>
+
+</dataset>
