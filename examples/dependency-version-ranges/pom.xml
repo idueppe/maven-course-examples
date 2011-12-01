@@ -35,11 +35,13 @@
 			<version>[,4.0)</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency> 
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>(,3.6.0.CR1)</version>
-		</dependency>      
+		</dependency>               
+		
 		<dependency> 
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-annotations</artifactId>
@@ -47,9 +49,10 @@
 		</dependency>            
 		
 		<dependency>
-			<groupId>de.tutego.maven.distribution</groupId>
+			<groupId>de.crowdcode.maven.distribution</groupId>
 			<artifactId>example-distribution</artifactId>
-			<version>(,1.1-SNAPSHOT)</version>
+			<version>(,1.1-SNAPSHOT)</version>   
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 </project>

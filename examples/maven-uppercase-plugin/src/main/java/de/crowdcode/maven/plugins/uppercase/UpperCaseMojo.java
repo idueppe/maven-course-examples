@@ -34,10 +34,15 @@ public class UpperCaseMojo extends AbstractMojo {
 	/**
 	 * Location of the file.
 	 * 
-	 * @parameter expression="${project.build.directory}/upperCases"
+	 * @parameter default-value="${project.build.directory}/upperCases"
 	 * @required
 	 */
 	private File outputDirectory;
+	
+	/**
+	 * @parameter expression="${message}" default-value="Hello World!" 
+	 */
+	private String message;
 	
     /**
      * Directory containing resources files.
@@ -62,30 +67,35 @@ public class UpperCaseMojo extends AbstractMojo {
 	
 	public void processFiles(final File[] sourceFiles, final File directory) throws MojoExecutionException {
 		for (File file : sourceFiles) {
-			getLog().info("Found file "+file.getName());
+			
 			File upperFile = new File(directory,file.getName().toUpperCase());
 			if (file.isDirectory()) {
 				upperFile.mkdir();
 				processFiles(file.listFiles(), upperFile);
 			} else {
-				FileWriter writer = null;
-				try {
-					writer = new FileWriter(upperFile);
-					writer.write(upperFile.getName());
-				} catch (IOException e) {
-					throw new MojoExecutionException("Error creating file " + upperFile, e);
-				} finally {
-					if (writer != null) {
-						try {
-							writer.close();
-						} catch (IOException e) {
-							// ignore
-						}
-					}
-				}
+				getLog().info("Found file "+file.getName());
+				writeFile(upperFile);
 			}
 		}
 		
+	}
+
+	private void writeFile(File upperFile) throws MojoExecutionException {
+		FileWriter writer = null;
+		try {
+			writer = new FileWriter(upperFile);
+			writer.write(message);
+		} catch (IOException e) {
+			throw new MojoExecutionException("Error creating file " + upperFile, e);
+		} finally {
+			if (writer != null) {
+				try {
+					writer.close();
+				} catch (IOException e) {
+					// ignore
+				}
+			}
+		}
 	}
 	
 }

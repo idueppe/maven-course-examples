@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.devzuz.mvnbook.proficio</groupId>
 	<!--groupId>org.apache.maven.proficio</groupId-->
 	<artifactId>proficio</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>Maven Proficio</name>
 	<url>http://localhost/~idueppe/Proficio</url>
 	<description>
-    Proficio sample application from "Better Builds with Maven"
-  </description>
+    	Proficio sample application from "Better Builds with Maven"
+  	</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>             
@@ -83,7 +83,12 @@
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency>     
+		<dependency>
+		  <groupId>org.hibernate</groupId>
+		  <artifactId>hibernate-core</artifactId>
+		  <version>3.6.8.Final</version>
+		</dependency>   
 	</dependencies>
 
 	<distributionManagement>
@@ -91,8 +96,28 @@
 			<id>mvnbook.site</id>
 			<name>Better Builds with Maven Website</name>
 			<url>file:///Users/idueppe/Sites/Proficio</url>
-		</site>
-	</distributionManagement>
+		</site>                                 
+		<repository>
+			<id>nexus</id>
+			<name>Nexus-Repository</name>
+			<url>http://localhost:8081/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+		
+	</distributionManagement>    
+	
+	<scm>
+		<connection>
+			scm:git:file:///Users/idueppe/git/maven-course-examples/examples/proficio
+		</connection>
+		<developerConnection>
+			scm:git:file:///Users/idueppe/git/maven-course-examples/examples/proficio
+		</developerConnection>
+		<url>http://localhost/</url>
+	</scm>
 	
 	
 	<build>
@@ -128,7 +153,7 @@
 							<version>2.3</version>
 							<configuration>
 								<repositoryUrl>--</repositoryUrl>
-								<artifactItems/>
+								<artifactItems />
 							</configuration>
 						</plugin>
 						<plugin>

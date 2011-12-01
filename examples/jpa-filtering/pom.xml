@@ -42,7 +42,8 @@
 					<include>**/*.xml</include>
 <!-- 					<include>**/*.properties</include> -->
 				</includes>
-			</resource>
+			</resource>    
+			
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
@@ -50,6 +51,7 @@
 					<exclude>**/*.xml</exclude>
 				</excludes>
 			</resource>
+			
 		</resources>
 
 	</build>

@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany.weather</groupId>
 	<artifactId>parent</artifactId>
@@ -9,15 +10,15 @@
 	<modules>
 		<module>simple-weather</module>
 		<module>simple-webapp</module>
-	</modules>       
-	
+	</modules>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -28,18 +29,22 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	<build>      
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>    
+				<artifactId>maven-compiler-plugin</artifactId>
 				<inherited>true</inherited>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.5</source>
+					<target>1.5</target>
+					<irgendwas>
+						<a>A</a>
+						<b>B</b>
+					</irgendwas>
 				</configuration>
 			</plugin>
-		</plugins>  
+		</plugins>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -51,6 +56,17 @@
 					</configuration>
 				</plugin>
 			</plugins>
-		</pluginManagement>      
+		</pluginManagement>
 	</build>
+	<profiles>
+		<profile>
+			<id>test</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<bin>da</bin>
+			</properties>
+		</profile>
+	</profiles>
 </project>
