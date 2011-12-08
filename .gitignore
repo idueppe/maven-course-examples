@@ -3,9 +3,12 @@
 .settings/   
 examples/*/.settings/
 examples/*/target/
-solution/*/.settings/
-solution/*/.target/
+solutions/*/.settings/
+solutions/*/target/  
+exercises/*/.settings
+exercises/*/target/
 sandbox/
 target/
 tmp/
-tmp/*
+tmp/*        
+solutions/*/*.log
