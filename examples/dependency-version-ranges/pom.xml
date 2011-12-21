@@ -11,7 +11,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>  
 	
-
 	<build>         
 		<finalName>my-new-app-name</finalName>
 		<resources>
@@ -35,24 +34,31 @@
 			<version>[,4.0)</version>
 			<scope>test</scope>
 		</dependency>
-		
+<!--		
 		<dependency> 
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>(,3.6.0.CR1)</version>
-		</dependency>               
+		</dependency>         
+-->		
+		<dependency> 
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>(,3.5.0-CR-1)</version>
+		</dependency>      
 		
 		<dependency> 
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-annotations</artifactId>
 			<version>(,3.6)</version>
 		</dependency>            
-		
+<!--		
 		<dependency>
 			<groupId>de.crowdcode.maven.distribution</groupId>
 			<artifactId>example-distribution</artifactId>
 			<version>(,1.1-SNAPSHOT)</version>   
 			<optional>true</optional>
 		</dependency>
+-->
 	</dependencies>
 </project>

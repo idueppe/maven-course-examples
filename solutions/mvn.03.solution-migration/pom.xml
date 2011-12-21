@@ -62,12 +62,40 @@
 					<source>1.6</source>
 					<target>1.6</target>
 				</configuration>
-			</plugin>
+			</plugin>         
+			<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<archive>
+						    <manifest>
+								<mainClass>com.sonatype.maven.weather.yahoo.Main</mainClass>
+							</manifest>
+						</archive>
+
+					</configuration>
+				</plugin>
+			
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
+				<executions>
+				   <execution>                
+						<phase>package</phase>
+				   		<goals><goal>single</goal></goals>
+				   </execution>
+				</executions>	
+				<configuration>      
+					<archive>
+					    <manifest>
+							<mainClass>com.sonatype.maven.weather.yahoo.Main</mainClass>
+						</manifest>
+					</archive>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
+						<descriptorRef>project</descriptorRef>
+						<descriptorRef>src</descriptorRef>
+						<descriptorRef>bin</descriptorRef>
 					</descriptorRefs>
 				</configuration>
 			</plugin>

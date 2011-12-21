@@ -1,4 +1,4 @@
-package de.tutego.maven.distribution;
+package de.crowdcode.maven.distribution;
 
 /**
  * Hello world!
