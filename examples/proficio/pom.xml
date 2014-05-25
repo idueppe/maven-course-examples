@@ -30,19 +30,6 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	<mailingLists>
-		<mailingList>
-			<name>Maven User List</name>
-			<subscribe>users-subscribe@maven.apache.org</subscribe>
-			<unsubscribe>users-unsubscribe@maven.apache.org</unsubscribe>
-			<post>users@maven.apache.org</post>
-			<archive>http://mail-archives.apache.org/mod_mbox/maven-users</archive>
-			<otherArchives>
-				<otherArchive>http://www.mail-archive.com/users@maven.apache.org/</otherArchive>
-				<otherArchive>http://www.nabble.com/Maven---Users-f178.html</otherArchive>
-			</otherArchives>
-		</mailingList>
-	</mailingLists>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -157,6 +144,7 @@
 							</configuration>
 						</plugin>
 						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-javadoc-plugin</artifactId>
 							<version>2.8</version>
 						</plugin>

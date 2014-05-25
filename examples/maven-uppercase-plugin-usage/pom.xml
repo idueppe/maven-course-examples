@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>course.jpa</groupId>
+	<groupId>maven.course</groupId>
 	<artifactId>maven-uppercase-plugin-usage</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>jpa course exercise</name>
+	<name>maven-uppercase-plugin Maven Plugin</name>
 
-	<description>This is a blank exercise project for hibernate courses based on maven</description>
+	<description>Usage of maven-uppercase-plugin Maven Plugin</description>
 
 	<repositories>
 		<repository>
@@ -29,7 +29,7 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>de.crowdcode.maven.plugins</groupId>
+				<groupId>maven.course</groupId>
 				<artifactId>maven-uppercase-plugin</artifactId>
 				<version>1.0-SNAPSHOT</version>
 				<executions>

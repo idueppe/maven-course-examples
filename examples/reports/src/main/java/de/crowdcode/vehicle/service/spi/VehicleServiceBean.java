@@ -39,7 +39,7 @@ public class VehicleServiceBean implements VehicleService {
     @Override
     @Transactional(propagation=Propagation.SUPPORTS, readOnly = true)
     public List<Vehicle> getVehiclesByEngineType(EngineType... engineType) {
-        List<Vehicle> vehicles = new LinkedList<>();
+        List<Vehicle> vehicles = new LinkedList<Vehicle>();
         for (EngineType type : engineType) {
             vehicles.addAll(vehicleDao.findVehiclesByEngineType(type));
         }

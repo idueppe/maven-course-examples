@@ -7,7 +7,6 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>JAX-WS Code Generation - Contract Frist Solution</name>
-	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -61,7 +60,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.1</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 					<source>1.6</source>

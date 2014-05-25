@@ -2,12 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
     <version>1.0-SNAPSHOT</version>              
-	<groupId>de.crowdcode.maven</groupId>
-	<artifactId>jaxws-fraction-example</artifactId>
+	<groupId>maven.course.exercises</groupId>
+	<artifactId>jaxws-fraction-build-cylce</artifactId>
 	<packaging>ejb</packaging>
 	<name>Web Service 07 JAX-WS - Fraction Solution</name>
-	<url>http://maven.apache.org</url>
-
 	<dependencies>
    		<dependency>
      		<groupId>org.glassfish.extras</groupId>

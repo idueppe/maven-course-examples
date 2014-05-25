@@ -27,10 +27,10 @@ public class Manufacturer {
     private String name;
 
     @OneToMany(mappedBy = "manufacturer", cascade = { CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.DETACH, CascadeType.MERGE })
-    private List<Vehicle> vehicles = new ArrayList<>();
+    private List<Vehicle> vehicles = new ArrayList<Vehicle>();
     
     @OneToMany(mappedBy = "manufacturer", cascade = { CascadeType.ALL})
-    private List<Engine> ownedEngines = new ArrayList<>();
+    private List<Engine> ownedEngines = new ArrayList<Engine>();
 
     @Version
     private long version;

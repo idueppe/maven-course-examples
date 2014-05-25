@@ -24,9 +24,9 @@ public class DBFixture {
     
     private EntityManager em;
     
-    private List<Manufacturer> manufacturers = new ArrayList<>();
-    private List<Vehicle> vehicles = new ArrayList<>();
-    private List<Engine> engines = new ArrayList<>();
+    private List<Manufacturer> manufacturers = new ArrayList<Manufacturer>();
+    private List<Vehicle> vehicles = new ArrayList<Vehicle>();
+    private List<Engine> engines = new ArrayList<Engine>();
 
     private Manufacturer currentManufacturer;
 
@@ -38,11 +38,11 @@ public class DBFixture {
         this.createManufacturer("Buggati")
             .addVehicle()
             .setModelName("Veyron")
-            .setNettoPrice(1_200_000.00)
+            .setNettoPrice(1200000.00)
             .addEngine(EngineType.PETROL)
             .addVehicle()
             .setModelName("Veyron Diesel")
-            .setNettoPrice(999_000.00)
+            .setNettoPrice(999000.00)
             .addEngine(EngineType.DIESEL)
             .createManufacturer("VW")
             .addVehicle()
