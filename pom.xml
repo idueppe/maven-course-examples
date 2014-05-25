@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>maven.course</groupId>
+	<artifactId>maven-course-examples</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>maven-course-examples</name>
+	<description>Root workspace</description>
+	<url>https://github.com/tfr42/maven-course-examples</url>
+	<modules>
+		<module>examples</module>
+		<module>solutions</module>
+	</modules>
+	<profiles>
+		<profile>
+			<id>exercises</id>
+			<modules>
+				<module>exercises</module>
+			</modules>
+		</profile>
+	</profiles>
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+</project>

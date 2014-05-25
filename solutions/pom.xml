@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>maven.course</groupId>
+  <artifactId>solutions</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>solutionslab</name>
+  <description>Solutions Labs workspace</description>
+  <modules>
+    <module>jaxws-code-generation</module>
+    <module>mvn.02.solution</module>
+    <module>mvn.03.solution-assembly</module>
+    <module>mvn.03.solution-migration</module>
+    <module>mvn.03.solution-profile</module>
+    <module>mvn.04.solution-webapp</module>
+    <module>mvn.05.solution-multi</module>
+    <module>simple-weather-multi</module>
+  </modules>
+</project>
