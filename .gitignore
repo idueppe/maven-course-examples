@@ -1,14 +1,21 @@
-.classpath
+# Java Class files#
+*.class
+
+# Eclipse and STS files #
 .project
-.settings/   
-examples/*/.settings/
-examples/*/target/
-solutions/*/.settings/
-solutions/*/target/  
-exercises/*/.settings
-exercises/*/target/
-sandbox/
+.classpath
+.settings
+.springBeans
+
+# IntelliJIDEA files #
+.idea
+*.iml
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Directories #
 target/
-tmp/
-tmp/*        
-solutions/*/*.log
+*.prefs

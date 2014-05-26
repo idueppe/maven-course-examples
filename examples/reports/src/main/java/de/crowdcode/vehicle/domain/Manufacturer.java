@@ -15,7 +15,7 @@ import javax.persistence.Version;
 
 @Entity
 @NamedQueries(value = {
-        @NamedQuery(name = "findManufacturerByName", query = "SELECT m FROM Manufacturer m WHERE m.name = :name"),
+        @NamedQuery(name = "findManufacturerByName", query = "SELECT m FROM Manufacturer m WHERE m.name = :name")
 })
 public class Manufacturer {
 
