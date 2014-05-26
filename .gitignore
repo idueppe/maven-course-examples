@@ -19,3 +19,4 @@
 # Directories #
 target/
 *.prefs
+*.log
