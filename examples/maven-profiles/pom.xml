@@ -46,11 +46,37 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-<!-- 				<bin>test</bin> -->
-<!-- 				<test>active</test> -->
+				<!-- <bin>test</bin> -->
+				<!-- <test>active</test> -->
 			</properties>
 			<build>
 				<finalName>${project.artifactId}-${bin}-${test}</finalName>
+			</build>
+		</profile>
+		<profile>
+			<id>windowsTest</id>
+			<activation>
+				<os>
+					<family>Windows</family>
+				</os>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.17</version>
+						<executions>
+							<execution>
+								<id>integration-test</id>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
 			</build>
 		</profile>
 	</profiles>
