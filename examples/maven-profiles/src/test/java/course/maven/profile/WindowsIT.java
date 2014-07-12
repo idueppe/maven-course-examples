@@ -33,6 +33,6 @@ public class WindowsIT
      */
     public void testWindowsSystemProperty()
     {
-        assertEquals( "Windows", System.getProperty("os.name") );
+        assertTrue( System.getProperty("os.name").startsWith("Windows") );
     }
 }
