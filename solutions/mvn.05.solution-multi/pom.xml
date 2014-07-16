@@ -3,9 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>maven.course.solutions</groupId>
 	<artifactId>multi-weather</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Simple Weather Parent</name>
-	<version>1.0.0-SNAPSHOT</version>
+	<description>Lösung zu Übungsaufgabe 5 mit Integrationstest</description>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -42,5 +43,4 @@
 		<module>simple-weather</module>
 		<module>simple-webapp</module>
 	</modules>
-	<description>Lösung zu Übungsaufgabe 5 mit Integrationstest</description>
 </project>

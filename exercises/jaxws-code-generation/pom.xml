@@ -6,7 +6,6 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>JAX-WS Code Generation - Contract Frist Solution</name>
-	<url></url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -16,6 +16,5 @@
     <module>mvn.03.solution-profile</module>
     <module>mvn.04.solution-webapp</module>
     <module>mvn.05.solution-multi</module>
-    <module>simple-weather-multi</module>
   </modules>
 </project>
