@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-    <version>1.0-SNAPSHOT</version>              
 	<groupId>maven.course.exercises</groupId>
 	<artifactId>jaxws-fraction-build-cylce</artifactId>
+    <version>1.0-SNAPSHOT</version>              
 	<packaging>ejb</packaging>
 	<name>Web Service 07 JAX-WS - Fraction Solution</name>
 	<dependencies>
@@ -25,9 +25,9 @@
 		<finalName>fraction</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
+				<groupId>org.jvnet.jax-ws-commons</groupId>
 				<artifactId>jaxws-maven-plugin</artifactId>
-				<version>1.12</version>
+				<version>2.3.1-b03</version>
 				<executions>
 					<execution>
 						<phase>generate-test-sources</phase>
@@ -52,10 +52,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.1</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 					<compilerArguments>
 						<endorseddirs>${endorsed.dir}</endorseddirs>
 					</compilerArguments>
@@ -128,7 +128,7 @@
 								<pluginExecution>
 									<pluginExecutionFilter>
 										<groupId>
-											org.codehaus.mojo
+											org.jvnet.jax-ws-commons
 										</groupId>
 										<artifactId>
 											jaxws-maven-plugin
