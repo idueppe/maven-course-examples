@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>maven.course.flex</groupId>
+	<artifactId>flex-multiproject</artifactId>
+	<packaging>pom</packaging>
+	
+	<properties>
+	  <flexmojos.version>7.0.0</flexmojos.version>
+		<flex.version>4.12.0.20140303</flex.version>
+		<flexunit.version>4.1.0</flexunit.version>
+	</properties>
+
+	<modules>
+		<module>swc</module>
+		<module>swf</module>
+		<module>war</module>
+	</modules>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.flex.framework</groupId>
+				<artifactId>framework</artifactId>
+				<version>${flex.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+</project>
