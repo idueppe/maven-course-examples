@@ -7,10 +7,10 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Maven Parent POM</name>
-	<description>Parent POM</description>
+	<description>Maven Parent POM</description>
 	<inceptionYear>2009</inceptionYear>
 	<properties>
-		<java.version>1.6</java.version>
+		<java.version>1.7</java.version>
 	</properties>
 	<issueManagement>
 		<system>JIRA</system>
@@ -97,8 +97,8 @@
 				</plugin>
 				<plugin>
 					<groupId>org.mortbay.jetty</groupId>
-					<artifactId>maven-jetty-plugin</artifactId>
-					<version>6.1.26</version>
+					<artifactId>jetty-maven-plugin</artifactId>
+					<version>8.1.9.v20130131</version>
 					<!-- http://docs.codehaus.org/display/JETTY/Maven+Jetty+Plugin -->
 					<configuration>
 						<scanIntervalSeconds>10</scanIntervalSeconds>

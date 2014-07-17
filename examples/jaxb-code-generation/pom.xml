@@ -5,12 +5,11 @@
 	<groupId>maven.course</groupId>
 	<artifactId>jaxb-code-generation</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
 	<name>jaxb-code-generation</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.6</java.version>
+		<java.version>1.7</java.version>
 	</properties>
 
 	<build>

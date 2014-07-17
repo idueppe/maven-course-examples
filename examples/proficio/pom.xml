@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.devzuz.mvnbook.proficio</groupId>
-	<!--groupId>org.apache.maven.proficio</groupId-->
+	<groupId>maven.course</groupId>
 	<artifactId>proficio</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0.1-SNAPSHOT</version>
 	<name>Maven Proficio</name>
-	<url>http://localhost/~idueppe/Proficio</url>
 	<description>
     	Proficio sample application from "Better Builds with Maven"
   	</description>
@@ -33,27 +31,27 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>proficio-model</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>proficio-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>proficio-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>proficio-store-memory</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>proficio-store-xstream</artifactId>
 				<version>${project.version}</version>
 			</dependency>

@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.devzuz.mvnbook.proficio</groupId>
+    <groupId>maven.course</groupId>
     <artifactId>proficio-stores</artifactId>
     <version>1.0.1-SNAPSHOT</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
   <artifactId>proficio-store-xstream</artifactId>
   <name>Maven Proficio XStream Store</name>
   <dependencies>
@@ -14,7 +14,7 @@
       <version>1.1.3</version>
     </dependency>
     <dependency>
-      <groupId>com.devzuz.mvnbook.proficio</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>proficio-store-memory</artifactId>
       <version>${project.version}</version>
     </dependency>

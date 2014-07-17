@@ -4,7 +4,6 @@
 	<groupId>maven.course</groupId>
 	<artifactId>maven-source-plugin</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
 	<name>maven-source-plugin</name>    
 	
 	<properties>
@@ -17,11 +16,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.1</version>
 				<configuration>                                
 					<encoding>UTF-8</encoding>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<plugin>
