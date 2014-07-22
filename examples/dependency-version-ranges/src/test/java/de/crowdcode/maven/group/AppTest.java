@@ -1,4 +1,4 @@
-package de.tutego.maven.group;
+package de.crowdcode.maven.group;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
