@@ -8,6 +8,7 @@
 	<name>Examples for version ranges</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
 	</properties>
 
 	<build>
@@ -24,7 +25,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 			</plugin>
-			<!-- Use mvn dependency:tree -->
+			<!-- Use mvn dependency:tree 
+				 http://maven.apache.org/plugins/maven-dependency-plugin/ -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
