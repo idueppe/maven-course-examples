@@ -31,7 +31,8 @@
 				<version>2.8</version>
 			</plugin>
 			<!-- Use mvn versions:resolve-ranges
-			     Attention: This will change the POM! -->
+			     Attention: This will change the POM! 
+			     http://mojo.codehaus.org/versions-maven-plugin/plugin-info.html -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
