@@ -4,18 +4,24 @@
 	version="2.0">
 	
 	<persistence-unit name="vehicle-foundation" transaction-type="RESOURCE_LOCAL">
+		<class>de.crowdcode.vehicle.domain.ApplicationLog</class>
+		<class>de.crowdcode.vehicle.domain.Engine</class>
+		<class>de.crowdcode.vehicle.domain.EngineType</class>
+		<class>de.crowdcode.vehicle.domain.Manufacturer</class>
+		<class>de.crowdcode.vehicle.domain.Message</class>
+		<class>de.crowdcode.vehicle.domain.Vehicle</class>
 		<properties>
-<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /> -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/> 
 			<property name="hibernate.connection.driver_class" value="org.h2.Driver" />
 			<property name="hibernate.connection.username" value="postgres" />
 			<property name="hibernate.connection.password" value="masterkey" />
-			<property name="hibernate.connection.url" value="jdbc:h2:/tmp/spring.database" />
+			<property name="hibernate.connection.url" value="jdbc:h2:/tmp/spring.database;DB_CLOSE_ON_EXIT=FALSE" />
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
-			<property name="hibernate.show_sql" value="false" />
-			<property name="hibernate.format_sql" value="true" />
-			<property name="hibernate.use_sql_comments" value="false" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hibernate.use_sql_comments" value="true" />
 			<property name="hibernate.id.new_generator_mappings" value="true" />
+			<property name="hibernate.archive.autodetection" value="class"/>
 		</properties>
 	</persistence-unit>
 	

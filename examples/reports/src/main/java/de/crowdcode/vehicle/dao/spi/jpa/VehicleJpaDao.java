@@ -8,7 +8,6 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
-
 import de.crowdcode.vehicle.dao.VehicleDao;
 import de.crowdcode.vehicle.domain.EngineType;
 import de.crowdcode.vehicle.domain.Vehicle;
