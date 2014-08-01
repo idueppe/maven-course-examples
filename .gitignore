@@ -18,5 +18,7 @@
 
 # Directories #
 target/
+bin/
 *.prefs
 *.log
+.svn

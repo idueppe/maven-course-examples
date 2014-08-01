@@ -1,9 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>maven.course</groupId>
   <artifactId>simple-release</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.5-SNAPSHOT</version>
   <name>simple-release</name>
 
   <properties>
@@ -11,9 +10,10 @@
   </properties>     
 
   <scm>
-  	<connection>scm:git:scm:git:https://github.com/tfr42/maven-course-examples.git</connection>
-	<developerConnection>scm:git:https://tfr42@github.com/tfr42/maven-course-examples.git</developerConnection>
+  	<connection>scm:git:https://github.com/tfr42/maven-course-examples.git</connection>
+	<developerConnection>scm:git:https://github.com/tfr42/maven-course-examples.git</developerConnection>
 	<url>https://github.com/tfr42/maven-course-examples/</url>	
+    <tag>HEAD</tag>
   </scm>
 
   <dependencies>
@@ -25,14 +25,29 @@
     </dependency>
   </dependencies>
   
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-release-plugin</artifactId>
+  			<version>2.5</version>
+  			<configuration>
+  				<commitByProject>true</commitByProject>
+  				<arguments>-N</arguments>
+  				<pomFileName>examples/simple-release/pom.xml</pomFileName>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+  
   <distributionManagement>
 	<repository>
-		<id>nexus</id>
+		<id>nexus-releases</id>
 		<name>Nexus-Repository</name>
 		<url>http://localhost:8081/nexus/content/repositories/releases</url>
 	</repository>
 	<snapshotRepository>
-		<id>nexus</id>
+		<id>nexus-snapshots</id>
 		<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
 	</snapshotRepository>
   </distributionManagement>
