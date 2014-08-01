@@ -1,42 +1,56 @@
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>maven.course</groupId>
-	<artifactId>jaxws-fraction-example</artifactId>
+	<artifactId>jaxws-fraction-ejb</artifactId>
     <version>1.0-SNAPSHOT</version>              
 	<packaging>ejb</packaging>
-	<name>Web Service 07 JAX-WS - Fraction Solution</name>
+	<name>Web Service 07 JAX-WS - Fraction EJB</name>
 
 	<dependencies>
+		<dependency>
+     		<groupId>javax</groupId>
+     		<artifactId>javaee-api</artifactId>
+     		<version>6.0</version>
+     		<scope>provided</scope>
+   		</dependency>
    		<dependency>
      		<groupId>org.glassfish.extras</groupId>
      		<artifactId>glassfish-embedded-all</artifactId>
      		<version>3.1.1-b11</version>
 		    <scope>test</scope>
    		</dependency>
-		  <dependency>
-     		<groupId>javax</groupId>
-     		<artifactId>javaee-api</artifactId>
-     		<version>6.0</version>
-     		<scope>provided</scope>
-   		</dependency>
+   		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<finalName>fraction</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
+				<groupId>org.jvnet.jax-ws-commons</groupId>
 				<artifactId>jaxws-maven-plugin</artifactId>
-				<version>1.12</version>
+				<version>2.3.1-b03</version>
 				<executions>
-					<execution>
-						<phase>generate-test-sources</phase>
+					<execution>         
+						<id>gen</id>
+						<phase>process-classes</phase>
 						<goals>
 							<goal>wsgen</goal>
 							<goal>wsimport</goal>
 						</goals>
 					</execution>
+<!-- 					<execution>      -->
+<!-- 						<id>import</id> -->
+<!-- 						<phase>generate-sources</phase> -->
+<!-- 						<goals> -->
+<!-- 						</goals> -->
+<!-- 				   	</execution> -->
 				</executions>
 				<configuration>
 					<sei>course.jaxws.fraction.FractionBean</sei>
@@ -60,6 +74,10 @@
 					<compilerArguments>
 						<endorseddirs>${endorsed.dir}</endorseddirs>
 					</compilerArguments>
+					<excludes>
+						<exclude>**/*EJB.*</exclude>
+						<exclude>**/*EJBTest.*</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -73,7 +91,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.1</version>
+				<version>2.8</version>
 				<executions>
 					<execution>
 						<phase>validate</phase>
@@ -94,14 +112,43 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>			
-			
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.9</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/sources-generated</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.17</version>
+				<configuration>
+					<skip>${skipTests}</skip>
+					<testFailureIgnore>${ignoreFailures}</testFailureIgnore>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<skipTests>true</skipTests>
+		<ignoreFailures>false</ignoreFailures>			
 	</properties>
 	
 </project>
