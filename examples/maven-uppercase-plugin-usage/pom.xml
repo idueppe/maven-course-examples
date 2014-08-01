@@ -4,17 +4,8 @@
 	<groupId>maven.course</groupId>
 	<artifactId>maven-uppercase-plugin-usage</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<name>maven-uppercase-plugin Maven Plugin</name>
+	<name>maven-uppercase-plugin Maven Plugin usage</name>
 	<description>Usage of maven-uppercase-plugin Maven Plugin</description>
-
-	<repositories>
-		<repository>
-			<id>JBoss</id>
-			<name>JBoss Repository</name>
-			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-		</repository>
-	</repositories>
 
 	<build>
 		<plugins>
