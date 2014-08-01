@@ -4,6 +4,7 @@
 	<groupId>maven.course</groupId>
 	<artifactId>jaxws-fraction-service</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>Web Service 07 JAX-WS - Service</name>
 	<dependencies>           
 		<dependency>
@@ -22,9 +23,9 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
+				<groupId>org.jvnet.jax-ws-commons</groupId>
 				<artifactId>jaxws-maven-plugin</artifactId>
-				<version>1.12</version>
+				<version>2.3.1-b03</version>
 				<executions>
 					<execution>         
 						<id>gen</id>
@@ -43,20 +44,29 @@
 				</executions>
 				<configuration>
 					<sei>course.jaxws.fraction.FractionBean</sei>
-					<packageName>course.jaxws.generated</packageName> 
-					<wsdlLocation>http://localhost:9000/services?wsdl</wsdlLocation>
+					<packageName>course.jaxws.generated</packageName>
 					<keep>true</keep>
 					<genWsdl>true</genWsdl>
 					<verbose>true</verbose>
 					<resourceDestDir>${project.build.directory}/resources-generated</resourceDestDir>
 					<wsdlDirectory>${project.build.directory}/resources-generated</wsdlDirectory>
 					<sourceDestDir>${project.build.directory}/sources-generated</sourceDestDir>
+					<wsdlLocation>http://localhost:9000/services?wsdl</wsdlLocation>
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>        
+				</configuration>
+			</plugin>             
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7</version>
+				<version>1.9</version>
 				<executions>
 					<execution>
 						<id>add-source</id>
@@ -72,15 +82,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>        
-				</configuration>
-			</plugin>             
 		</plugins>
 	</build>
 	<properties>
