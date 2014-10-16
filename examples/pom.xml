@@ -12,8 +12,7 @@
     <module>deployment-assembly-example</module>
     <module>distribution-example</module>
     <module>ejb-jboss-simple</module>
-<!--     <module>ejbs</module> -->
-    <module>flex-multiproject</module>
+    <module>ejbs</module>
     <module>git-scm-example</module>
     <module>jaxb-code-generation</module>
 <!--     <module>jaxws-code-generation</module> -->
@@ -36,4 +35,12 @@
     <module>simple-release</module>
     <module>spring-bom</module>
   </modules>
+  <profiles>
+  	<profile>
+  		<id>flex</id>
+  		<modules>
+  		    <module>flex-multiproject</module>
+  		</modules>
+  	</profile>
+  </profiles>
 </project>
