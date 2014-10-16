@@ -4,39 +4,36 @@
 
 	<parent>
 		<groupId>course.ejb3</groupId>
-		<artifactId>parent</artifactId>
+		<artifactId>ejbs-parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>ejb3.solution.01.sessionbeans</artifactId>
 	<packaging>ejb</packaging>
 	<name>Solution 01 SessionBeans</name>
-	
+
 	<dependencies>
 		<dependency>
-			<groupId>javax.ejb</groupId>
-			<artifactId>ejb-api</artifactId>
-			<version>3.0</version>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>6.0</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>glassfish</groupId>
-			<artifactId>appserv-rt.jar</artifactId>
-			<version>LATEST</version>
-			<scope>system</scope>
-			<systemPath>${env.GLASSFISH_HOME}/lib/appserv-rt.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>glassfish</groupId>
-			<artifactId>javaee.jar</artifactId>
-			<version>LATEST</version>
-			<scope>system</scope>
-			<systemPath>${env.GLASSFISH_HOME}/lib/javaee.jar</systemPath>
 		</dependency>
 	</dependencies>
 
 	<build>
 		<finalName>solution.01.sessionbeans</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<ejbVersion>3.0</ejbVersion>
+					<generateClient>true</generateClient>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 
 </project>
