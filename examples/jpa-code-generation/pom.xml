@@ -4,11 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>course.jpa</groupId>
 	<artifactId>jpa-code-generation</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<name>jpa course examples</name>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>jpa metamodel generation</name>
+  <description>JPA 2.0 with Hibernate EntityManager Metamodel Generator</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>3.0.7.RELEASE</spring.version>
 	</properties>
 
 	<repositories>
@@ -16,10 +18,6 @@
 			<id>JBoss</id>
 			<name>JBoss Repository</name>
 			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-		</repository>
-		<repository>
-			<id>com.springsource.repository.maven.release</id>
-			<url>http://maven.springframework.org/release/</url>
 		</repository>
 	</repositories>
 
@@ -121,33 +119,33 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>3.0.7.RELEASE</version>
-			<scope>runtime</scope>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-			<version>3.0.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>3.0.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
-			<version>3.0.7.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>3.0.7.RELEASE</version>
+			<version>${spring.version}</version>
+      <scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>3.6.7.Final</version>
+			<version>3.6.10.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -162,7 +160,7 @@
 		<dependency>
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>1.8.0.7</version>
+			<version>1.8.0.10</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -200,12 +198,14 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.13</version>
+			<version>5.1.33</version>
+      <optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>9.0-801.jdbc4</version>
+      <optional>true</optional>
 		</dependency>
 	</dependencies>
 </project>
