@@ -10,15 +10,15 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-                     
-	<scm>
-		<connection>
-			scm:local:/User/tf/git/maven-course-examples:local-scm
-		</connection>
-		<developerConnection>
-			scm:local:/User/tf/git/maven-course-examples:local-scm
-		</developerConnection>
-	</scm>
+
+  <scm>
+    <connection>
+  		scm:local:/User/tf/git/maven-course-examples:local-scm
+  	</connection>
+    <developerConnection>
+  		scm:local:/User/tf/git/maven-course-examples:local-scm
+  	</developerConnection>
+  </scm>
 
   <dependencies>
     <dependency>
