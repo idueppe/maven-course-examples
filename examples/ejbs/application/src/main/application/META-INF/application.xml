@@ -5,13 +5,13 @@
       	http://java.sun.com/xml/ns/javaee/application_6.xsd"
 	version="6">
 	<description>EJB3 + JPA Seminar</description>
-	<display-name>course.01.application</display-name>
+	<display-name>ejb3.application</display-name>
 	<module>
-		<ejb>ejb3.solution.01.sessionbeans.jar</ejb>
+		<ejb>ejb3.sessionbeans.jar</ejb>
 	</module>
 	<module>
 		<web>
-			<web-uri>ejb3.solution.01.webclient.war</web-uri>
+			<web-uri>ejb3.webclient.war</web-uri>
 			<context-root>/webclient</context-root>
 		</web>
 	</module>

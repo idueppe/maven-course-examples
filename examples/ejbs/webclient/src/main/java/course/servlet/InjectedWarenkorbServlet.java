@@ -15,7 +15,10 @@ import course.common.WarenkorbLocal;
 @EJB(name = "course.common.Warenkorb", beanInterface = WarenkorbLocal.class)
 public class InjectedWarenkorbServlet extends HttpServlet {
 
-	// Dies funktioniert nicht!!! Da immer ein neues WarenkorbBean zugeordnet wiesen wird.
+	/**
+	 * Achtung: Es wird für jeden Request immer wieder ein neues WarenkorbBean
+	 * zugewiesen.
+	 */
 	@EJB()
 	private WarenkorbLocal warenkorb;
 
@@ -23,9 +26,11 @@ public class InjectedWarenkorbServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		System.out.println(this.toString() + " using SFSB " + warenkorb
+				+ " processing request " + req);
 		HttpSession session = req.getSession(true);
-		String l = req.getParameter("logout");
-		if (l != null) {
+		String isLoggedOut = req.getParameter("logout");
+		if (isLoggedOut != null) {
 			warenkorb.abmelden();
 			session.invalidate();
 			return; // oder neuen Warenkorb erzeugen

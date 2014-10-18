@@ -25,7 +25,7 @@ public class WarenkorbBean implements Warenkorb, WarenkorbLocal, Serializable {
 	@Resource
 	private SessionContext sessionContext;
 
-	@Resource(mappedName = "jdbc/MySql")
+	@Resource(mappedName = "java:jboss/datasources/ExampleDS", name = "jdbc/MyDs")
 	private DataSource dataSource;
 
 	@EJB
