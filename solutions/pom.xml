@@ -6,7 +6,7 @@
   <artifactId>solutions</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>solutionslab</name>
+  <name>solutions-lab</name>
   <description>Solutions Labs workspace</description>
   <modules>
     <module>jaxws-code-generation</module>
