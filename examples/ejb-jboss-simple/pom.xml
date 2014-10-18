@@ -75,11 +75,12 @@
 				</configuration>
 			</plugin>
 
-			<!-- JBoss AS plugin for command line deployment -->
+			<!-- JBoss AS plugin for command line deployment 
+           https://docs.jboss.org/jbossas/7/plugins/maven/latest/index.html -->
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jboss-maven-plugin</artifactId>
-				<version>1.5.0</version>
+        <groupId>org.jboss.as.plugins</groupId>
+        <artifactId>jboss-as-maven-plugin</artifactId>
+        <version>7.6.Final</version>
 				<configuration>
 					<jbossHome>${jboss.home}</jbossHome>
 					<serverName>${jboss.domain}</serverName>
