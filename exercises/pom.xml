@@ -6,7 +6,7 @@
   <artifactId>exercises</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>exerciseslab</name>
+  <name>exercises-lab</name>
   <description>Exercises Labs workspace</description>
   <modules>
 <!--     <module>jaxb-code-generation</module> -->
