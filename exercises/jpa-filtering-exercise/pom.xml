@@ -4,8 +4,8 @@
 	<groupId>maven.course.exercises</groupId>
 	<artifactId>jpa-filtering-exercise</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>jpa course exercise</name>
-	<description>This is a blank exercise project for hibernate courses based on maven</description>
+	<name>jpa exercise</name>
+	<description>This is a exercise project for working with JPA and Hibernate EntityManager</description>
 
 	<repositories>
 		<repository>
