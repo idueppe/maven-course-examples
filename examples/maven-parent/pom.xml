@@ -13,36 +13,30 @@
 		<java.version>1.7</java.version>
 	</properties>
 	<issueManagement>
-		<system>JIRA</system>
-		<url>http://${ci.host}:${ci.port}/jira</url>
+		<system>github</system>
+		<url>https://github.com/tfr42/maven-course-examples/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Jenkins CI</system>
-		<url>http://${ci.host}:${ci.port}/hudson</url>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/tfr42/maven-course-examples</url>
 	</ciManagement>
 	<scm>
-		<!-- Default: scm:svn:http://${scm.host}/svn/m2repo/${project.artifactId} -->
-		<connection>scm:svn:http://${scm.host}/svn/m2repo/${project.artifactId}</connection>
-		<!-- Default: scm:svn:http://${user.name}:${user.password}@${scm.host}/svn/m2repo/${project.artifactId} -->
-		<developerConnection>scm:svn:http://${user.name}:${user.password}@${scm.host}/svn/m2repo/${project.artifactId}</developerConnection>
-		<url>http://${scm.host}/svn/m2repo/${project.artifactId}</url>
+    <connection>scm:git:https://github.com/tfr42/maven-course-examples.git</connection>
+    <developerConnection>scm:git:https://github.com/tfr42/maven-course-examples.git</developerConnection>
+    <url>https://github.com/tfr42/maven-course-examples</url>
 		<tag>trunk</tag>
 	</scm>
 	<developers>
 		<developer>
-			<id>tf</id>
+			<id>tfr42</id>
 			<name>Torsten Friebe</name>
 			<roles>
 				<role>Developer</role>
 			</roles>
-			<organization>GFU Cyrus AG</organization>
 			<email>tfr@users.sourceforge.net</email>
+      <url>http://javainabox.blogspot.de/</url>
 		</developer>
 	</developers>
-	<organization>
-		<name>GFU Cyrus AG</name>
-		<url>http://www.gfu.net</url>
-	</organization>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -175,13 +169,25 @@
 								</rules>
 							</configuration>
 						</execution>
+            <execution>
+              <id>enforce-maven</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <requireMavenVersion>
+                    <version>[3.0.3,)</version>
+                  </requireMavenVersion>
+                </rules>    
+              </configuration>
+            </execution>
 					</executions>
 				</plugin>
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-scm-plugin</artifactId>
-					<version>1.6</version>
+					<version>1.9.2</version>
 					<configuration>
 						<connectionType>connection</connectionType>
 					</configuration>
@@ -189,29 +195,29 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-install-plugin</artifactId>
-					<version>2.4</version>
+					<version>2.5.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.5</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-deploy-plugin</artifactId>
 					<version>2.7</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
-					<version>2.2.1</version>
+					<version>2.5.1</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
 					<!-- 2.3 for maven 2.x -->
 					<!-- 3.0 for maven 3.x -->
-					<version>3.0</version>
+					<version>3.4</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -381,9 +387,6 @@
 			<properties>
 				<repo.host>localhost</repo.host>
 				<repo.port>8081</repo.port>
-				<scm.host>localhost</scm.host>
-				<ci.host>localhost</ci.host>
-				<ci.port>8082</ci.port>
 			</properties>
 		</profile>
 		<profile>
@@ -397,9 +400,6 @@
 			<properties>
 				<repo.host>192.168.50.100</repo.host>
 				<repo.port>8080</repo.port>
-				<scm.host>192.168.50.100</scm.host>
-				<ci.host>192.168.50.100</ci.host>
-				<ci.port>8080</ci.port>
 			</properties>
 		</profile>
 		<profile>
@@ -413,9 +413,6 @@
 			<properties>
 				<repo.host>192.168.2.114</repo.host>
 				<repo.port>8080</repo.port>
-				<scm.host>192.168.2.114</scm.host>
-				<ci.host>192.168.2.114</ci.host>
-				<ci.port>8080</ci.port>
 			</properties>
 		</profile>
 	</profiles>
