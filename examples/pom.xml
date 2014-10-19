@@ -28,7 +28,7 @@
     <module>maven-uppercase-plugin</module>
     <module>maven-uppercase-plugin-usage</module>
     <module>proficio</module>
-    <module>project-pattern-architype</module>
+    <module>project-pattern-archetype</module>
     <module>quickstart-pom</module>
     <module>reports</module>
     <module>simple-archetype</module>
