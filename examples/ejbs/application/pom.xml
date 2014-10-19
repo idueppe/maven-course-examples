@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>course.ejb3</groupId>
+		<groupId>maven.course</groupId>
 		<artifactId>ejbs-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
