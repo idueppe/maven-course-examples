@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
       	http://java.sun.com/xml/ns/javaee/application_6.xsd"
 	version="6">
-	<description>EJB3 + JPA Seminar</description>
+	<description>Java EE 6 sample application</description>
 	<display-name>ejb3.application</display-name>
 	<module>
 		<ejb>ejb3.sessionbeans.jar</ejb>
