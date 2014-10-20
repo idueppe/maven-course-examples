@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -30,7 +31,7 @@
 		<maven.pmd.plugin>2.7.1</maven.pmd.plugin>
 		<maven.findbugs.plugin>2.5.4</maven.findbugs.plugin>
 		<maven.project.info.reports.plugin>2.4</maven.project.info.reports.plugin>
-		<maven.site.plugin>3.2</maven.site.plugin>
+		<maven.site.plugin>3.3</maven.site.plugin>
 		<maven.sonar.plugin>2.4</maven.sonar.plugin>
 		<maven.surefire.plugin>2.17</maven.surefire.plugin>
 		<maven.taglist.plugin>2.4</maven.taglist.plugin>
@@ -178,100 +179,6 @@
 					</execution>
 				</executions>
 				<configuration>
-					<reportPlugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-surefire-report-plugin</artifactId>
-							<version>${maven.surefire.plugin}</version>
-							<configuration>
-								<outputDirectory>${project.reporting.outputDirectory}/testresults</outputDirectory>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-javadoc-plugin</artifactId>
-							<version>${maven.javadoc.plugin}</version>
-							<configuration>
-								<aggregate>true</aggregate>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-checkstyle-plugin</artifactId>
-							<version>${maven.checkstyle.plugin}</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-project-info-reports-plugin</artifactId>
-							<version>${maven.project.info.reports.plugin}</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-jxr-plugin</artifactId>
-							<version>${maven.jxr.plugin}</version>
-							<configuration>
-								<aggregate>true</aggregate>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.jacoco</groupId>
-							<artifactId>jacoco-maven-plugin</artifactId>
-							<version>${maven.jacoco.plugin}</version>
-							<configuration>
-								<aggregate>true</aggregate>
-								<outputDirectory>%{project.reporting.outputDirectory}/jacoco</outputDirectory>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-pmd-plugin</artifactId>
-							<version>${maven.pmd.plugin}</version>
-							<configuration>
-								<aggregate>true</aggregate>
-								<sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-								<!-- The minimum tokens before a violation -->
-								<minimumTokens>100</minimumTokens>
-								<!-- Turn off if no xref report -->
-								<linkXRef>true</linkXRef>
-								<verbose>true</verbose>
-								<targetJdk>${java.version}</targetJdk>
-								<rulesets>
-									<ruleset>/rulesets/maven.xml</ruleset>
-									<ruleset>/rulesets/migrating_to_junit4.xml</ruleset>
-									<ruleset>/rulesets/design.xml</ruleset>
-									<ruleset>/rulesets/unusedcode.xml</ruleset>
-									<ruleset>/rulesets/typeresolution.xml</ruleset>
-								</rulesets>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>findbugs-maven-plugin</artifactId>
-							<version>${maven.findbugs.plugin}</version>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>versions-maven-plugin</artifactId>
-							<version>${maven.versions.plugin}</version>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>taglist-maven-plugin</artifactId>
-							<version>${maven.taglist.plugin}</version>
-							<configuration>
-								<aggregate>true</aggregate>
-							</configuration>
-						</plugin>
-						<plugin>
-					        <groupId>org.codehaus.mojo</groupId>
-					        <artifactId>sonar-maven-plugin</artifactId>
-					        <version>${maven.sonar.plugin}</version>
-					        <configuration>
-					        	<sonarHostURL>${sonar.host.url}</sonarHostURL>
-					        	<skip>true</skip>
-					        </configuration>
-					    </plugin>
-					</reportPlugins>
 					<locales>en</locales>
 				</configuration>
 				<dependencies>
@@ -285,5 +192,101 @@
 			</plugin>
 		</plugins>
 	</build>
-
+  
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>${maven.surefire.plugin}</version>
+        <configuration>
+          <outputDirectory>${project.reporting.outputDirectory}/testresults</outputDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${maven.javadoc.plugin}</version>
+        <configuration>
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${maven.checkstyle.plugin}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>${maven.project.info.reports.plugin}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>${maven.jxr.plugin}</version>
+        <configuration>
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${maven.jacoco.plugin}</version>
+        <configuration>
+          <aggregate>true</aggregate>
+          <outputDirectory>%{project.reporting.outputDirectory}/jacoco</outputDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>${maven.pmd.plugin}</version>
+        <configuration>
+          <aggregate>true</aggregate>
+          <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+          <!-- The minimum tokens before a violation -->
+          <minimumTokens>100</minimumTokens>
+          <!-- Turn off if no xref report -->
+          <linkXRef>true</linkXRef>
+          <verbose>true</verbose>
+          <targetJdk>${java.version}</targetJdk>
+          <rulesets>
+            <ruleset>/rulesets/maven.xml</ruleset>
+            <ruleset>/rulesets/migrating_to_junit4.xml</ruleset>
+            <ruleset>/rulesets/design.xml</ruleset>
+            <ruleset>/rulesets/unusedcode.xml</ruleset>
+            <ruleset>/rulesets/typeresolution.xml</ruleset>
+          </rulesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>${maven.findbugs.plugin}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>${maven.versions.plugin}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>taglist-maven-plugin</artifactId>
+        <version>${maven.taglist.plugin}</version>
+        <configuration>
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>${maven.sonar.plugin}</version>
+        <configuration>
+          <sonarHostURL>${sonar.host.url}</sonarHostURL>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
