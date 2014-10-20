@@ -48,7 +48,7 @@ public class ManufacturerJpaDao implements ManufacturerDao {
         TypedQuery<Manufacturer> query = em.createNamedQuery("findManufacturerByName", Manufacturer.class);
         query.setParameter("name", name);
         List<Manufacturer> manufacturers = query.getResultList();
-        if (manufacturers.size() > 0) {
+		if (!manufacturers.isEmpty()) {
             return manufacturers.get(0);
         } else {
             return null;

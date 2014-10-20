@@ -20,8 +20,8 @@ public abstract class AbstractDefaultConverter<SOURCE, TARGET> extends
     /**
      * Override this method to sort a converted list of target objects
      */
-    protected void sort(List<TARGET> targetList) {
-    }
+	protected void sort(List<TARGET> targetList) {
+	}
 
     public TARGET convert(SOURCE source) throws ConversionException {
         try {
