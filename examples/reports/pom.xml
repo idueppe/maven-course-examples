@@ -12,7 +12,7 @@
 	
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com:tfr42/maven-course-examples/issues</url>
+		<url>https://github.com/tfr42/maven-course-examples/issues</url>
 	</issueManagement>
 	
 	<ciManagement>
@@ -25,7 +25,7 @@
 		<spring.version>3.1.4.RELEASE</spring.version>
 		<maven.checkstyle.plugin>2.7</maven.checkstyle.plugin>
 		<maven.jacoco.plugin>0.7.2.201409121644</maven.jacoco.plugin>
-		<maven.doxia.module.markdown.version>1.3</maven.doxia.module.markdown.version>
+		<maven.doxia.module.markdown.version>1.4</maven.doxia.module.markdown.version>
 		<maven.javadoc.plugin>2.8.1</maven.javadoc.plugin>
 		<maven.jxr.plugin>2.3</maven.jxr.plugin>
 		<maven.pmd.plugin>2.7.1</maven.pmd.plugin>
@@ -73,13 +73,13 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.3.168</version>
+			<version>1.3.170</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.0.0.GA</version>
+			<version>4.0.1.GA</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -100,7 +100,7 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.14</version>
+			<version>1.2.16</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -276,6 +276,16 @@
         <version>${maven.taglist.plugin}</version>
         <configuration>
           <aggregate>true</aggregate>
+          <tags>
+            <tag>fixme</tag>
+            <tag>FixMe</tag>
+            <tag>FIXME</tag>
+            <tag>@todo</tag>
+            <tag>todo</tag>
+            <tag>TODO</tag>
+            <tag>xxx</tag>
+            <tag>@deprecated</tag>
+          </tags>
         </configuration>
       </plugin>
       <plugin>
