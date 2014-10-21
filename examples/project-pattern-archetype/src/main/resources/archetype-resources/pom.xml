@@ -14,16 +14,33 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>     
 
-  <build>   
+  <build>  
+    <defaultGoal>install</defaultGoal> 
 		<plugins>
 			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.1</version>
 				<configuration>
+          <encoding>UTF-8</encoding>
 					<source>${javaVersion}</source> 
 					<target>${javaVersion}</target>
 				</configuration>
 			</plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+        <inherited>true</inherited>
+      </plugin>
 		</plugins>
 	</build>
 
