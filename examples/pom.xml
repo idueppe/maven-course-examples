@@ -29,9 +29,7 @@
     <module>maven-uppercase-plugin-usage</module>
     <module>proficio</module>
     <module>project-pattern-archetype</module>
-    <module>quickstart-pom</module>
     <module>reports</module>
-    <module>simple-archetype</module>
     <module>simple-release</module>
     <module>spring-bom</module>
   </modules>
