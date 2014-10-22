@@ -26,7 +26,7 @@
 		<maven.checkstyle.plugin>2.7</maven.checkstyle.plugin>
 		<maven.jacoco.plugin>0.7.2.201409121644</maven.jacoco.plugin>
 		<maven.doxia.module.markdown.version>1.4</maven.doxia.module.markdown.version>
-		<maven.javadoc.plugin>2.8.1</maven.javadoc.plugin>
+		<maven.javadoc.plugin>2.9.1</maven.javadoc.plugin>
 		<maven.jxr.plugin>2.3</maven.jxr.plugin>
 		<maven.pmd.plugin>2.7.1</maven.pmd.plugin>
 		<maven.findbugs.plugin>2.5.4</maven.findbugs.plugin>
