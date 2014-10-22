@@ -16,7 +16,7 @@
     <module>git-scm-example</module>
     <module>jaxb-code-generation</module>
 <!--     <module>jaxws-code-generation</module> -->
-<!--     <module>jaxws-fraction-service</module> -->
+    <module>jaxws-fraction-service</module>
 <!--     <module>jaxws-fraction-webapp</module> -->
     <module>jpa-code-generation</module>
     <module>jpa-filtering</module>
