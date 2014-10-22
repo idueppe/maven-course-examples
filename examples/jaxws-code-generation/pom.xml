@@ -7,7 +7,7 @@
 	<artifactId>jaxws-code-generation</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>JAX-WS Code Generation - Contract Frist Solution</name>
+	<name>JAX-WS Code Generation - Contract First Solution</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
