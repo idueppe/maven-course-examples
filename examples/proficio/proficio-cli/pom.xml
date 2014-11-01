@@ -11,14 +11,17 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>proficio-core</artifactId>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>proficio-store-memory</artifactId>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>proficio-store-xstream</artifactId>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
 

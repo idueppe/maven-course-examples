@@ -11,6 +11,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>proficio-model</artifactId>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
 </project>
