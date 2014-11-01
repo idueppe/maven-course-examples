@@ -21,7 +21,7 @@
       <outputDirectory>/</outputDirectory>
       <excludes>
         <exclude>junit:junit</exclude>
-        <exclude>com.devzuz.mvnbook.proficio:proficio-store-xstream</exclude>
+        <exclude>maven.course:proficio-store-xstream</exclude>
       </excludes>
     </dependencySet>
   </dependencySets>
