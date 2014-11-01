@@ -10,10 +10,26 @@
 	<properties>
 		<jboss.home>${env.JBOSS_HOME}</jboss.home>
 		<jboss.domain>default</jboss.domain>
+    <java.version>1.6</java.version>
 	</properties>
 	<modules>
 		<module>application</module>
 		<module>sessionbeans</module>
 		<module>webclient</module>
 	</modules>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.2</version>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>
