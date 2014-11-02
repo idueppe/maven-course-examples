@@ -6,7 +6,7 @@
 	<version>3.2</version>
 	<packaging>pom</packaging>
 	<name>Spring Framework BOM</name>
-	<description>Spring Framework Bill of Materials</description>
+	<description>Spring Framework Bill of Materials (BOM)</description>
 	<url>http://www.spring.io</url>
 	<properties>
 		<spring.version>3.2.11.RELEASE</spring.version>
