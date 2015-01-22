@@ -8,7 +8,7 @@ import de.crowdcode.vehicle.domain.Manufacturer;
 import de.crowdcode.vehicle.dto.ManufacturerDto;
 
 @Service("manufacturerConverter")
-public class ManufacturerConverter extends AbstractDefaultConverter<Manufacturer, ManufacturerDto>{
+public class ManufacturerConverter extends AbstractDefaultConverter<Manufacturer, ManufacturerDto> {
 
     @Autowired
     private VehicleConverter vehicleConverter;
@@ -19,10 +19,10 @@ public class ManufacturerConverter extends AbstractDefaultConverter<Manufacturer
     }
 
     @Override
-    protected void copyProperties(Manufacturer source, ManufacturerDto target) {
-        target.setId(source.getId());
-        target.setName(source.getName());
-        target.setVehicles(vehicleConverter.convert(source.getVehicles()));
+    protected void copyProperties( Manufacturer source, ManufacturerDto target ) {
+        target.setId( source.getId() );
+        target.setName( source.getName() );
+        target.setVehicles( vehicleConverter.convert( source.getVehicles() ) );
     }
 
 }

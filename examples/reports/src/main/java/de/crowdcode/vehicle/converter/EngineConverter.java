@@ -10,17 +10,17 @@ import de.crowdcode.vehicle.dto.EngineDto;
  */
 @Service("engineConverter")
 public class EngineConverter extends
-		AbstractDefaultConverter<Engine, EngineDto> {
+                             AbstractDefaultConverter<Engine, EngineDto> {
 
-	@Override
-	protected EngineDto newTargetInstance() {
-		return new EngineDto();
-	}
+    @Override
+    protected EngineDto newTargetInstance() {
+        return new EngineDto();
+    }
 
-	@Override
-	protected void copyProperties(final Engine source, final EngineDto target) {
-		target.setEngineId(source.getId());
-		target.setEngineType(source.getType());
-	}
+    @Override
+    protected void copyProperties( final Engine source, final EngineDto target ) {
+        target.setEngineId( source.getId() );
+        target.setEngineType( source.getType() );
+    }
 
 }
