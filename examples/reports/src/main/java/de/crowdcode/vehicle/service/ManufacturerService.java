@@ -6,12 +6,12 @@ import de.crowdcode.vehicle.domain.Manufacturer;
 
 public interface ManufacturerService {
     
-    public List<Manufacturer> findAll();
+    List<Manufacturer> findAll();
     
-    public void addManufacturer(String manufacturerName) throws ManufacturerAlreadyExistsException;
+    void addManufacturer(String manufacturerName) throws ManufacturerAlreadyExistsException;
     
-    public Manufacturer byName(String manufacturerName);
+    Manufacturer byName(String manufacturerName);
 
-    public boolean doesManufacturerExists(String manufacturerName);
+    boolean doesManufacturerExists(String manufacturerName);
     
 }

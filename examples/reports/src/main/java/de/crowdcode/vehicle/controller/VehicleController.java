@@ -6,10 +6,10 @@ import de.crowdcode.vehicle.dto.VehicleDto;
 
 public interface VehicleController {
 
-    public List<VehicleDto> findVehicleByManufacturer(String manufacturerName);
+    List<VehicleDto> findVehicleByManufacturer(String manufacturerName);
     
-    public void saveOrUpdateVehicle(VehicleDto vehicle);
+    void saveOrUpdateVehicle(VehicleDto vehicle);
     
-    public void deleteVehicle(VehicleDto vehicle);
+    void deleteVehicle(VehicleDto vehicle);
     
 }

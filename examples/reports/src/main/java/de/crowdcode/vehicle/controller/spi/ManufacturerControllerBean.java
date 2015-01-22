@@ -22,7 +22,7 @@ public class ManufacturerControllerBean implements ManufacturerController {
 
     @Override
 	public ManufacturerDto byName(final String manufacturerName) {
-        Manufacturer manufacturer = manufacturerService.byName(manufacturerName);
+        final Manufacturer manufacturer = manufacturerService.byName(manufacturerName);
         return manufacturerConverter.convert(manufacturer);
     }
 
