@@ -51,7 +51,7 @@
 		<site>
 			<id>localhost.site</id>
 			<name>local Website</name>
-			<url>file:///Users/idueppe/Sites/Proficio</url>
+			<url>file:///${user.home}/Sites/Proficio</url>
 		</site>                                 
 		<repository>
 			<id>nexus</id>
@@ -66,10 +66,10 @@
 	
 	<scm>
 		<connection>
-			scm:git:file:///Users/idueppe/git/maven-course-examples/examples/proficio
+			scm:git:file:///${user.home}/git/maven-course-examples/examples/proficio
 		</connection>
 		<developerConnection>
-			scm:git:file:///Users/idueppe/git/maven-course-examples/examples/proficio
+			scm:git:file:///${user.home}/git/maven-course-examples/examples/proficio
 		</developerConnection>
 		<url>http://localhost/</url>
 	</scm>
@@ -100,7 +100,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <inherited>true</inherited>
-        <version>2.9.1</version>
+        <version>2.10.1</version>
         <executions>
           <execution>
             <goals><goal>jar</goal></goals>
