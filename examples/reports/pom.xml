@@ -28,14 +28,14 @@
   </scm>
 
 	<properties>
-		<java.version>1.6</java.version>
+		<java.version>1.7</java.version>
 		<spring.version>3.1.4.RELEASE</spring.version>
-		<maven.checkstyle.plugin>2.8</maven.checkstyle.plugin>
+		<maven.checkstyle.plugin>2.9</maven.checkstyle.plugin>
 		<maven.jacoco.plugin>0.7.2.201409121644</maven.jacoco.plugin>
 		<maven.doxia.module.markdown.version>1.5</maven.doxia.module.markdown.version>
 		<maven.javadoc.plugin>2.10.1</maven.javadoc.plugin>
 		<maven.jxr.plugin>2.4</maven.jxr.plugin>
-		<maven.pmd.plugin>3.0.1</maven.pmd.plugin>
+		<maven.pmd.plugin>3.1</maven.pmd.plugin>
 		<maven.findbugs.plugin>3.0.0</maven.findbugs.plugin>
 		<maven.project.info.reports.plugin>2.7</maven.project.info.reports.plugin>
 		<maven.site.plugin>3.4</maven.site.plugin>
@@ -48,13 +48,14 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<skipTests>false</skipTests>
 		<ignoreFailures>true</ignoreFailures>
+		<sonar.host.url>http://localhost/sonar</sonar.host.url>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -75,7 +76,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.1.10.Final</version>
+			<version>4.1.12.Final</version>
 		</dependency>
 
 		<dependency>
@@ -234,9 +235,8 @@
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>${maven.surefire.plugin}</version>
         <configuration>
-          <outputDirectory>${project.reporting.outputDirectory}/testresults</outputDirectory>
-          <!-- Sets the VM argument line used when unit tests are run. -->
-          <argLine>${surefireArgLine}</argLine>
+          <outputName>surefire-report</outputName>
+          <showSuccess>true</showSuccess>
         </configuration>
       </plugin>
       <plugin>
@@ -246,14 +246,14 @@
         <configuration>
           <aggregate>true</aggregate>
           <!-- Requires installation of graphviz! -->
-          <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>                         
-          <docletArtifact>                                                         
-              <groupId>org.umlgraph</groupId>                                      
-              <artifactId>umlgraph</artifactId>                                    
-              <version>5.6.6</version>                                               
-          </docletArtifact>                                                        
-          <additionalparam>-views -all</additionalparam>                           
-          <useStandardDocletOptions>true</useStandardDocletOptions>                
+          <!--<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>-->
+          <!--<docletArtifact>-->
+              <!--<groupId>org.umlgraph</groupId>-->
+              <!--<artifactId>umlgraph</artifactId>-->
+              <!--<version>5.6.6</version>-->
+          <!--</docletArtifact>-->
+          <!--<additionalparam>-views -all</additionalparam>                           -->
+          <!--<useStandardDocletOptions>true</useStandardDocletOptions>                -->
         </configuration>
       </plugin>
       <plugin>
