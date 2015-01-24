@@ -43,7 +43,8 @@
 		<maven.surefire.plugin>2.17</maven.surefire.plugin>
 		<maven.taglist.plugin>2.4</maven.taglist.plugin>
 		<maven.versions.plugin>1.3.1</maven.versions.plugin>
-    <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
+        <maven.jdepend.plugin>2.0</maven.jdepend.plugin>
+        <maven.dependencycheck.plugin>1.2.8</maven.dependencycheck.plugin>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<skipTests>false</skipTests>
@@ -224,6 +225,18 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+          <groupId>org.owasp</groupId>
+          <artifactId>dependency-check-maven</artifactId>
+          <version>${maven.dependencycheck.plugin}</version>
+          <executions>
+              <execution>
+                  <goals>
+                      <goal>check</goal>
+                  </goals>
+              </execution>
+          </executions>
       </plugin>
     </plugins>  
 	</build>
