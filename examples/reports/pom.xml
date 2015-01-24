@@ -204,6 +204,7 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${maven.jacoco.plugin}</version>
+        <!--
         <executions>
           <execution>
             <id>default-prepare-agent</id>
@@ -225,6 +226,7 @@
             </goals>
           </execution>
         </executions>
+         -->
       </plugin>
       <plugin>
           <groupId>org.owasp</groupId>
