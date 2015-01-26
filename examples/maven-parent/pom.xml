@@ -358,7 +358,7 @@
 	<distributionManagement>
 		<site>
 			<id>localhost</id>
-			<url>file://opt/www/${project.groupId}/${project.artifactId}</url>
+			<url>file://${user.home}/Sites/${project.groupId}/${project.artifactId}/${project.version}</url>
 		</site>
 		<downloadUrl>
 			http://${repo.host}:${repo.port}/nexus/content/groups/public/${project.groupId}/${project.artifactId}/${project.version}
