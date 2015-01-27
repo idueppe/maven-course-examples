@@ -8,6 +8,7 @@
   <name>examples-lab</name>
   <description>Examples Labs workspace</description>
   <modules>
+    <module>antrun-example</module>
     <module>dependency-version-ranges</module>
     <module>deployment-assembly-example</module>
     <module>distribution-example</module>

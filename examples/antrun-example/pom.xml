@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>maven.course</groupId>
+  <artifactId>antrun-example</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>antrun-example</name>
+  <description>Example using antrun plugin</description>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <id>second</id>
+            <phase>validate</phase>
+            <configuration>
+              <target>
+                <echo>2</echo>
+                <echo>GAV: ${project.groupId}:${project.artifactId}:${project.version}</echo>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>first</id>
+            <phase>verify</phase>
+            <configuration>
+              <target>
+                <!-- Place any Ant task here. You can add anything you can 
+                  add between <target> and </target> in a build.xml. -->
+                <property name="runtime_classpath" refid="maven.runtime.classpath" />
+                <echo>1</echo>
+                <echo>${PATH}=${env.PATH}</echo>
+                <echo>User's Home Directory: ${user.home}</echo>
+                <echo>Project's Base Director: ${basedir}</echo>
+                <echo>Runtime classpath ${runtime_classpath}</echo>
+                <ant antfile="build.xml" dir=".">
+                  <property name="project_version" value="${project.version}" />
+                  <property name="runtime_classpath" value="${runtime_classpath}" />
+                </ant>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+    </dependency>
+  </dependencies>
+</project>
