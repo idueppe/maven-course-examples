@@ -5,8 +5,8 @@
 	<artifactId>multi-weather</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Simple Weather Parent</name>
-	<description>Lösung zu Übungsaufgabe 5 mit Integrationstest</description>
+	<name>mvn.05.solution</name>
+	<description>Simple Weather Parent - Lösung zu Übungsaufgabe 5 mit Integrationstest</description>
 	<build>
 		<pluginManagement>
 			<plugins>
