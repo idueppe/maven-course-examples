@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>maven.course.exercises</groupId>
 	<artifactId>jaxws-fraction-build-cylce</artifactId>
-  <version>1.0-SNAPSHOT</version>              
+  <version>1.0.0-SNAPSHOT</version>              
 	<packaging>ejb</packaging>
 	<name>JAX-WS - Fraction Web Service exercise</name>
   <description>This is a exercise project for working with JAX-WS</description>

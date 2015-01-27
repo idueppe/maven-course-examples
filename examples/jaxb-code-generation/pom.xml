@@ -4,7 +4,7 @@
 
 	<groupId>maven.course</groupId>
 	<artifactId>jaxb-code-generation</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>jaxb-code-generation</name>
 
 	<properties>

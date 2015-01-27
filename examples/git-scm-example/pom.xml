@@ -5,7 +5,7 @@
 
 	<groupId>maven.course</groupId>
 	<artifactId>git-scm-example</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>git-scm-example</name>
 
 	<properties>
