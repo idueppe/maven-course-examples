@@ -220,23 +220,10 @@
 					<version>3.4</version>
 				</plugin>
 				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>cobertura-maven-plugin</artifactId>
-					<version>2.5.1</version>
-					<configuration>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>cobertura</goal>
-								</goals>
-							</execution>
-						</executions>
-						<formats>
-							<format>xml</format>
-						</formats>
-					</configuration>
-				</plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.7.2.201409121644</version>
+        </plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -272,20 +259,8 @@
 				<version>1.2.15</version>
 				<exclusions>
 					<exclusion>
-						<groupId>javax.mail</groupId>
-						<artifactId>mail</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>javax.jms</groupId>
-						<artifactId>jms</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.sun.jmx</groupId>
-						<artifactId>jmxri</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.sun.jdmk</groupId>
-						<artifactId>jmxtools</artifactId>
+						<groupId>*</groupId>
+						<artifactId>*</artifactId>
 					</exclusion>
 				</exclusions>
 			</dependency>
@@ -322,17 +297,11 @@
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>2.13</version>
 			</plugin>
-			<!-- TODO replace with jacoco plugin -->
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<formats>
-						<format>html</format>
-					</formats>
-				</configuration>
-			</plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.7.2.201409121644</version>
+      </plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
