@@ -11,6 +11,8 @@
 	<inceptionYear>2009</inceptionYear>
 	<properties>
 		<java.version>1.7</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<issueManagement>
 		<system>github</system>
@@ -37,6 +39,9 @@
       <url>http://javainabox.blogspot.de/</url>
 		</developer>
 	</developers>
+	<prerequisites>
+      <maven>3.0.5</maven>
+    </prerequisites>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -53,7 +58,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.17</version>
+					<version>2.18.1</version>
 					<configuration>
 						<!-- 'methods' for parallel is not the fastest way to test, but it 
 							is the best, to detect non-threadsafe code. <parallel>methods</parallel> 
@@ -67,7 +72,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>2.17</version>
+					<version>2.18.1</version>
 					<configuration>
 						<includes>
 							<include>**/*PerformanceTest.java</include>
@@ -92,7 +97,7 @@
 				<plugin>
 					<groupId>org.mortbay.jetty</groupId>
 					<artifactId>jetty-maven-plugin</artifactId>
-					<version>8.1.9.v20130131</version>
+					<version>8.1.16.v20140903</version>
 					<!-- http://docs.codehaus.org/display/JETTY/Maven+Jetty+Plugin -->
 					<configuration>
 						<scanIntervalSeconds>10</scanIntervalSeconds>
@@ -154,7 +159,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>1.3.1</version>
+					<version>1.4</version>
 					<executions>
 						<execution>
 							<id>enforce-java</id>
@@ -164,7 +169,7 @@
 							<configuration>
 								<rules>
 									<requireJavaVersion>
-										<version>[1.5,${java.version}]</version>
+										<version>[${java.version},)</version>
 									</requireJavaVersion>
 								</rules>
 							</configuration>
@@ -177,7 +182,7 @@
 			              <configuration>
 			                <rules>
 			                  <requireMavenVersion>
-			                    <version>[3.0.3,)</version>
+			                    <version>[3.0.5,)</version>
 			                  </requireMavenVersion>
 			                </rules>    
 			              </configuration>
@@ -199,6 +204,11 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.10</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>2.7</version>
 				</plugin>
@@ -214,16 +224,43 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.5.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
 					<!-- 2.3 for maven 2.x -->
 					<!-- 3.x for maven 3.x -->
 					<version>3.4</version>
 				</plugin>
 				<plugin>
-          <groupId>org.jacoco</groupId>
-          <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.7.2.201409121644</version>
-        </plugin>
+		          <groupId>org.jacoco</groupId>
+		          <artifactId>jacoco-maven-plugin</artifactId>
+		          <version>0.7.2.201409121644</version>
+		        </plugin>
+		        <plugin>
+                  <groupId>org.codehaus.mojo</groupId>
+                  <artifactId>versions-maven-plugin</artifactId>
+                  <version>2.1</version>
+                </plugin>
+		        <plugin>
+                  <groupId>org.codehaus.mojo</groupId>
+                  <artifactId>appassembler-maven-plugin</artifactId>
+                  <version>1.9</version>
+                </plugin>
+                <plugin>
+		          <groupId>org.owasp</groupId>
+		          <artifactId>dependency-check-maven</artifactId>
+		          <version>1.2.8</version>
+		          <executions>
+		              <execution>
+		                  <goals>
+		                      <goal>check</goal>
+		                  </goals>
+		              </execution>
+		          </executions>
+		      	</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -240,9 +277,17 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+		        <artifactId>jacoco-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+            </plugin>
 		</plugins>
 	</build>
 	<dependencyManagement>
@@ -250,7 +295,7 @@
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
-				<version>4.8.2</version>
+				<version>4.12</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
@@ -270,6 +315,11 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.8</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.10.1</version>
 			</plugin>
@@ -286,7 +336,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
-				<version>2.7.1</version>
+				<version>3.3</version>
 				<configuration>
 					<linkXref>true</linkXref>
 					<targetJdk>${jdk.version}</targetJdk>
@@ -298,14 +348,14 @@
 				<version>2.13</version>
 			</plugin>
 			<plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.7.2.201409121644</version>
-      </plugin>
+		        <groupId>org.jacoco</groupId>
+		        <artifactId>jacoco-maven-plugin</artifactId>
+		        <version>0.7.2.201409121644</version>
+		    </plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>2.5.5</version>
+				<version>3.0.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -322,6 +372,11 @@
 				<artifactId>javancss-maven-plugin</artifactId>
 				<version>2.1</version>
 			</plugin>
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
 		</plugins>
 	</reporting>
 	<distributionManagement>
@@ -352,19 +407,6 @@
 			<properties>
 				<repo.host>localhost</repo.host>
 				<repo.port>8081</repo.port>
-			</properties>
-		</profile>
-		<profile>
-			<id>gfu</id>
-			<activation>
-				<property>
-					<name>env</name>
-					<value>gfu</value>
-				</property>
-			</activation>
-			<properties>
-				<repo.host>192.168.50.100</repo.host>
-				<repo.port>8080</repo.port>
 			</properties>
 		</profile>
 		<profile>
