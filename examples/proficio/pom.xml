@@ -1,18 +1,15 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.devzuz.mvnbook.proficio</groupId>
-	<!--groupId>org.apache.maven.proficio</groupId-->
+	<groupId>maven.course</groupId>
 	<artifactId>proficio</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0.1-SNAPSHOT</version>
 	<name>Maven Proficio</name>
-	<url>http://localhost/~idueppe/Proficio</url>
-	<description>
-    	Proficio sample application from "Better Builds with Maven"
-  	</description>
+	<description>Proficio sample application from "Better Builds with Maven"</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.6</java.version>
 	</properties>             
 	
 	<modules>
@@ -30,72 +27,31 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	<mailingLists>
-		<mailingList>
-			<name>Maven User List</name>
-			<subscribe>users-subscribe@maven.apache.org</subscribe>
-			<unsubscribe>users-unsubscribe@maven.apache.org</unsubscribe>
-			<post>users@maven.apache.org</post>
-			<archive>http://mail-archives.apache.org/mod_mbox/maven-users</archive>
-			<otherArchives>
-				<otherArchive>http://www.mail-archive.com/users@maven.apache.org/</otherArchive>
-				<otherArchive>http://www.nabble.com/Maven---Users-f178.html</otherArchive>
-			</otherArchives>
-		</mailingList>
-	</mailingLists>
+  
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
-				<artifactId>proficio-model</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
-				<artifactId>proficio-api</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
-				<artifactId>proficio-core</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
-				<artifactId>proficio-store-memory</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.devzuz.mvnbook.proficio</groupId>
-				<artifactId>proficio-store-xstream</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>org.codehaus.plexus</groupId>
 				<artifactId>plexus-container-default</artifactId>
-				<version>1.0-alpha-9</version>
+				<version>1.0.0</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	<dependencies>
+	
+  <dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>3.8.2</version>
 			<scope>test</scope>
 		</dependency>     
-		<dependency>
-		  <groupId>org.hibernate</groupId>
-		  <artifactId>hibernate-core</artifactId>
-		  <version>3.6.8.Final</version>
-		</dependency>   
 	</dependencies>
 
 	<distributionManagement>
 		<site>
-			<id>mvnbook.site</id>
-			<name>Better Builds with Maven Website</name>
-			<url>file:///Users/idueppe/Sites/Proficio</url>
+			<id>localhost.site</id>
+			<name>local Website</name>
+			<url>file:///${user.home}/Sites/Proficio</url>
 		</site>                                 
 		<repository>
 			<id>nexus</id>
@@ -106,124 +62,147 @@
 			<id>nexus</id>
 			<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
-		
 	</distributionManagement>    
 	
 	<scm>
 		<connection>
-			scm:git:file:///Users/idueppe/git/maven-course-examples/examples/proficio
+			scm:git:file:///${user.home}/git/maven-course-examples/examples/proficio
 		</connection>
 		<developerConnection>
-			scm:git:file:///Users/idueppe/git/maven-course-examples/examples/proficio
+			scm:git:file:///${user.home}/git/maven-course-examples/examples/proficio
 		</developerConnection>
 		<url>http://localhost/</url>
 	</scm>
 	
-	
 	<build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      </plugins>
+    </pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.0</version>
+				<version>3.4</version>
 				<inherited>true</inherited>
-				<configuration>
-					<reportPlugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-project-info-reports-plugin</artifactId>
-							<version>2.4</version>
-						</plugin>
-						<!-- Falls Versionskontrollsystem konfiguriert ist:
-					        <plugin>
-					          <artifactId>maven-changelog-plugin</artifactId>
-					        </plugin>
-					        -->
-						<plugin>
-							<artifactId>maven-checkstyle-plugin</artifactId>
-							<version>2.8</version>
-							<configuration>
-								<configLocation>config/maven_checks.xml</configLocation>
-								<includeTestSourceDirectory>true</includeTestSourceDirectory>
-								<excludes>**/generated/*.java</excludes>
-							</configuration>
-						</plugin>
-						<plugin>
-							<artifactId>maven-dependency-plugin</artifactId>
-							<version>2.3</version>
-							<configuration>
-								<repositoryUrl>--</repositoryUrl>
-								<artifactItems />
-							</configuration>
-						</plugin>
-						<plugin>
-							<artifactId>maven-javadoc-plugin</artifactId>
-							<version>2.8</version>
-						</plugin>
-						<plugin>   
-							<artifactId>maven-jxr-plugin</artifactId>
-							<version>2.3</version>
-						</plugin>
-						<plugin>
-							<artifactId>maven-pmd-plugin</artifactId>
-							<version>2.6</version>
-							<configuration>
-								<targetJdk>1.6</targetJdk>
-								<format>xml</format>
-								<linkXref>true</linkXref>
-								<sourceEncoding>ISO-8859-1</sourceEncoding>
-								<minimumTokens>100</minimumTokens>
-								<excludes>
-									<exclude>**/generated/*.java</exclude>
-								</excludes>
-							</configuration>
-						</plugin>
-						<plugin>
-							<artifactId>maven-surefire-report-plugin</artifactId>
-							<version>2.10</version>
-							<configuration>
-								<!-- Bei grossen Projekten auf false setzen: -->
-								<showSuccess>true</showSuccess>
-							</configuration>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>cobertura-maven-plugin</artifactId>
-							<version>2.5.1</version>
-						</plugin>           
-						<!--
-						
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>emma-maven-plugin</artifactId>
-							<version>1.2</version>
-						</plugin>
-						-->
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>findbugs-maven-plugin</artifactId>
-							<version>2.3.2</version>
-						</plugin>
-						<plugin>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>taglist-maven-plugin</artifactId>
-							<version>2.4</version>
-							<configuration>
-								<tags>
-									<tag>fixme</tag>
-									<tag>FixMe</tag>
-									<tag>FIXME</tag>
-									<tag>@todo</tag>
-									<tag>todo</tag>
-									<tag>TODO</tag>
-									<tag>xxx</tag>
-									<tag>@deprecated</tag>
-								</tags>
-							</configuration>
-						</plugin>
-					</reportPlugins>
-				</configuration>
 			</plugin>
-		</plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <inherited>true</inherited>
+        <version>2.10.3</version>
+        <executions>
+          <execution>
+            <goals><goal>jar</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <goals><goal>jar</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
 	</build>
+  
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.7</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.9.1</version>
+        <configuration>
+          <configLocation>config/maven_checks.xml</configLocation>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
+          <excludes>**/generated/*.java</excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.8</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.4</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>2.7.1</version>
+        <configuration>
+          <targetJdk>${java.version}</targetJdk>
+          <format>xml</format>
+          <linkXref>true</linkXref>
+          <sourceEncoding>ISO-8859-1</sourceEncoding>
+          <minimumTokens>100</minimumTokens>
+          <excludes>
+            <exclude>**/generated/*.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.17</version>
+        <configuration>
+          <!-- Bei grossen Projekten auf false setzen: -->
+          <showSuccess>true</showSuccess>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.5.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>2.3.3</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>taglist-maven-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <tags>
+            <tag>fixme</tag>
+            <tag>FixMe</tag>
+            <tag>FIXME</tag>
+            <tag>@todo</tag>
+            <tag>todo</tag>
+            <tag>TODO</tag>
+            <tag>xxx</tag>
+            <tag>@deprecated</tag>
+          </tags>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>

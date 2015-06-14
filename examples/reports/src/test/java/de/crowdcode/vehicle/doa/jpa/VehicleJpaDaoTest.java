@@ -55,7 +55,7 @@ public class VehicleJpaDaoTest {
     public void testFindCheapestVehilce() {
         Vehicle vehicle = dao.findCheapestVehicle();
         assertNotNull("There should be an cheapest vehicle", vehicle);
-        assertEquals("The price should be 999.000", 999_000.00, vehicle.getNettoPrice(), 0.0001);
+        assertEquals("The price should be 999.000", 999000.00, vehicle.getNettoPrice(), 0.0001);
     }
     
     @Test

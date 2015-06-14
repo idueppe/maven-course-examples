@@ -10,7 +10,7 @@ public class ManufacturerDaoException extends RuntimeException {
 
     public ManufacturerDaoException(String message, Throwable cause, boolean enableSuppression,
                     boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
+        super(message, cause); //, enableSuppression, writableStackTrace);
     }
 
     public ManufacturerDaoException(String message, Throwable cause) {

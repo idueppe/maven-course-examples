@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import de.crowdcode.vehicle.dao.ManufacturerDao;
 import de.crowdcode.vehicle.dao.VehicleDao;
 import de.crowdcode.vehicle.domain.EngineType;
@@ -39,7 +38,7 @@ public class VehicleServiceBean implements VehicleService {
     @Override
     @Transactional(propagation=Propagation.SUPPORTS, readOnly = true)
     public List<Vehicle> getVehiclesByEngineType(EngineType... engineType) {
-        List<Vehicle> vehicles = new LinkedList<>();
+        List<Vehicle> vehicles = new LinkedList<Vehicle>();
         for (EngineType type : engineType) {
             vehicles.addAll(vehicleDao.findVehiclesByEngineType(type));
         }
@@ -56,13 +55,15 @@ public class VehicleServiceBean implements VehicleService {
 
     @Override
     @Transactional(propagation=Propagation.REQUIRED)
-    public Vehicle addVehicleToManufacturer(String manufacturerName, Vehicle vehicle) {
+	public Vehicle addVehicleToManufacturer(final String manufacturerName,
+			final Vehicle vehicle) {
+		Vehicle updatedVehicle = vehicle;
         Manufacturer manufacturer = manufacturerDao.findManufacturerByName(manufacturerName);
         if (vehicle.getId() != null) {
-            vehicle = vehicleDao.update(vehicle);
+			updatedVehicle = vehicleDao.update(vehicle);
         }
         manufacturer.addVehicle(vehicle);
-        return vehicle;
+		return updatedVehicle;
     }
 
     @Override

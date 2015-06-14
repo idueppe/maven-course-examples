@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>maven.course</groupId>
+	<groupId>maven.course.exercises</groupId>
 	<artifactId>jaxws-code-generation</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
-	<name>JAX-WS Code Generation - Contract Frist Solution</name>
-	<url>http://maven.apache.org</url>
-
+	<name>JAX-WS - Code Generation exercise</name>
+  <description>This is a exercise project for working with JAX-WS and code generation</description>
+  
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -27,14 +27,13 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.1</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
-			<plugin>
 		</plugins>
  	</build>
 </project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>maven.course.flex</groupId>
+		<artifactId>flex-multiproject</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>swf</artifactId>
+	<packaging>swf</packaging>
+	<name>swf Application</name>
+
+	<build>
+		<sourceDirectory>src/main/flex</sourceDirectory>
+		<testSourceDirectory>src/test/flex</testSourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>net.flexmojos.oss</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<locales>
+						<locale>en_US</locale>
+					</locales>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.flex.framework</groupId>
+			<artifactId>flex-framework</artifactId>
+			<version>${flex.version}</version>
+			<type>pom</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.flexunit</groupId>
+			<artifactId>flexunit</artifactId>
+			<version>${flexunit.version}</version>
+			<classifier>flex4</classifier>
+			<type>swc</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>swc</artifactId>
+			<version>${project.version}</version>
+			<type>swc</type>
+		</dependency>
+	</dependencies>
+
+</project>

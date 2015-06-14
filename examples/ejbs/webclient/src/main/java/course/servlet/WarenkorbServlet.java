@@ -17,16 +17,17 @@ import course.common.Warenkorb;
 public class WarenkorbServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1364235522913699943L;
+	private static final String WARENKORB_GLOBAL_JNDI_NAME = "java:app/ejb3.sessionbeans/WarenkorbBean!course.common.Warenkorb";
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(true);
 		if (session.isNew()) {
 			try {
 				Context ic = new InitialContext();
-//				Object obj = ic.lookup("course.01.application/WarenkorbBean/local");
-//				Object obj = ic.lookup("course.common.WarenkorbBean");
-//				WarenkorbLocal warenkorb = (WarenkorbLocal) PortableRemoteObject.narrow(obj, WarenkorbLocal.class);
-				Warenkorb warenkorb = (Warenkorb) ic.lookup("course.common.Warenkorb");
+				Warenkorb warenkorb = (Warenkorb) ic
+						.lookup(WARENKORB_GLOBAL_JNDI_NAME);
+				System.out.println("Putting " + warenkorb
+						+ " into session with ID " + session.getId());
 				session.setAttribute("warenkorb", warenkorb);
 			} catch (NamingException e) {
 				e.printStackTrace();

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="demo4" default="echo" basedir=".">
+    <description>
+        simple example build file
+    </description>
+    <target name="echo"
+        description="show environment" >
+    <echo message="Ant build file called"/>
+    <echo message="project_version = ${project_version}"/>
+    <echo message="runtime_classpath = ${runtime_classpath}"/>
+    <java classname="net.gfu.seminar.maven.App" classpath="${runtime_classpath}" >
+    	<classpath path="runtime_classpath"/>
+    </java>
+  </target>
+</project>

@@ -7,16 +7,16 @@ import de.crowdcode.vehicle.domain.Vehicle;
 
 public interface VehicleService {
 
-	public Vehicle getCheapestVehicle();
+	Vehicle getCheapestVehicle();
 	
-	public List<Vehicle> getVehicleByManufacture(String name);
+	List<Vehicle> getVehicleByManufacture(String name);
 	
-	public List<Vehicle> getVehiclesByEngineType(EngineType... engineType);
+	List<Vehicle> getVehiclesByEngineType(EngineType... engineType);
 	
-	public Vehicle getVehicleById(Long vehicleId);
+	Vehicle getVehicleById(Long vehicleId);
 	
-	public Vehicle registerVehicle(Vehicle vehicle);
+	Vehicle registerVehicle(Vehicle vehicle);
 
-    public Vehicle addVehicleToManufacturer(String string, Vehicle vehicle);
+    Vehicle addVehicleToManufacturer(String string, Vehicle vehicle);
     
 }

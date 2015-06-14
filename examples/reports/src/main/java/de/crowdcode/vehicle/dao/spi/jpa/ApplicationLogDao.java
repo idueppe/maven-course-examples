@@ -13,18 +13,18 @@ import de.crowdcode.vehicle.domain.ApplicationLog;
 @Repository
 public class ApplicationLogDao implements de.crowdcode.vehicle.dao.ApplicationLogDao {
 
-    @PersistenceContext(name="vehicle-foundation")
+    @PersistenceContext(name = "vehicle-foundation")
     private EntityManager em;
 
     @Override
-    public void log(ApplicationLog logEntry) {
-        em.persist(logEntry);
+    public void log( ApplicationLog logEntry ) {
+        em.persist( logEntry );
     }
 
     @Override
     public List<ApplicationLog> findAll() {
-        TypedQuery<ApplicationLog> query = em.createNamedQuery("ApplicationLog.LOAD_ALL", ApplicationLog.class);
+        TypedQuery<ApplicationLog> query = em.createNamedQuery( "ApplicationLog.LOAD_ALL", ApplicationLog.class );
         return query.getResultList();
     }
-    
+
 }

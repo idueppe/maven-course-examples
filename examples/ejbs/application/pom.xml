@@ -1,35 +1,94 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
-		<groupId>course.ejb3</groupId>
-		<artifactId>parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<groupId>maven.course</groupId>
+		<artifactId>ejbs-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	
-	<groupId>course.ejb3</groupId>
-	<artifactId>ejb3.solution.01.application</artifactId>
+
+	<artifactId>ejb3.application</artifactId>
 	<packaging>ear</packaging>
-	<version>1.0-SNAPSHOT</version>
-	<name>Solution 01 Application</name>
-	
+	<name>Java EE 6 Enterprise Application Archive</name>
+  <url>http://127.0.0.1:8080/webclient/</url>
+
 	<build>
-		<finalName>solution.01.application</finalName>
+		<finalName>ejb3.application</finalName>
+		<plugins>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-ear-plugin</artifactId>
+          <version>2.9.1</version>
+          <configuration>
+              <version>6</version>
+              <fileNameMapping>no-version</fileNameMapping>
+              <defaultLibBundleDir>lib</defaultLibBundleDir>
+              <modules>
+               <webModule>
+                 <groupId>${project.groupId}</groupId>
+                 <artifactId>ejb3.webclient</artifactId>
+                 <contextRoot>/webclient</contextRoot>
+               </webModule>
+            </modules>
+          </configuration>
+      </plugin>
+      <!-- Run and deploy to JBoss AS 7.x
+           https://docs.jboss.org/jbossas/7/plugins/maven/latest/index.html -->  
+			<plugin>
+        <groupId>org.jboss.as.plugins</groupId>
+        <artifactId>jboss-as-maven-plugin</artifactId>
+        <version>7.6.Final</version>
+				<configuration>
+					<jbossHome>${jboss.home}</jbossHome>
+					<serverName>${jboss.domain}</serverName>
+					<fileNames>
+						<fileName>${project.build.directory}/${project.build.finalName}.ear</fileName>
+					</fileNames>
+<!--                     <deployEnabled>false</deployEnabled> -->
+                    <executions>
+                      <execution>
+                        <id>add-datasource</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>add-resource</goal>
+                        </goals>
+                        <configuration>
+                            <address>subsystem=datasources,data-source=java:jdbc/MyDs</address>
+                            <resource>
+                                <enable-resource>true</enable-resource>
+                                <properties>
+                                    <jndi-name>java:jdbc/MyDs</jndi-name>
+                                    <enabled>true</enabled>
+                                    <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</connection-url>
+                                    <driver-class>org.h2.Driver</driver-class>
+                                    <driver-name>h2</driver-name>
+                                    <user-name>sa</user-name>
+                                    <password>sa</password>
+                                    <pool-name>mypool</pool-name>
+                                </properties>
+                            </resource>
+                        </configuration>
+                    </execution>
+                </executions>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
-	
+
 	<dependencies>
 		<dependency>
-			<groupId>course.ejb3</groupId>
-			<artifactId>ejb3.solution.01.sessionbeans</artifactId>
-			<version>${pom.version}</version>
-			<type>jar</type>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>ejb3.sessionbeans</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>course.ejb3</groupId>
-			<artifactId>ejb3.solution.01.webclient</artifactId>
-			<version>${pom.version}</version>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>ejb3.webclient</artifactId>
+			<version>${project.version}</version>
 			<type>war</type>
 		</dependency>
 	</dependencies>
+
 </project>

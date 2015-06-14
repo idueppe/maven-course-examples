@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 
 import de.crowdcode.vehicle.controller.ManufacturerController;
 import de.crowdcode.vehicle.converter.ManufacturerConverter;
@@ -23,8 +21,8 @@ public class ManufacturerControllerBean implements ManufacturerController {
     private ManufacturerConverter manufacturerConverter;
 
     @Override
-    public ManufacturerDto byName(String manufacturerName) {
-        Manufacturer manufacturer = manufacturerService.byName(manufacturerName);
+	public ManufacturerDto byName(final String manufacturerName) {
+        final Manufacturer manufacturer = manufacturerService.byName(manufacturerName);
         return manufacturerConverter.convert(manufacturer);
     }
 
@@ -35,12 +33,12 @@ public class ManufacturerControllerBean implements ManufacturerController {
     }
 
     @Override
-    public void addManufacturer(String manufacturerName) {
+	public void addManufacturer(final String manufacturerName) {
         // TODO Bitte implementiert diese Methode.
     }
 
     @Override
-    public void deleteManufacturer(String manufacturerName) {
+	public void deleteManufacturer(final String manufacturerName) {
         // TODO Bitte implementiert diese Methode.
     }
 

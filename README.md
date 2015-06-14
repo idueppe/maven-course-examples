@@ -1,15 +1,14 @@
-## Examples, Exercises and Solutions for Apache Maven Courses
-    
-# License
+maven-course-examples
+======================
+Examples, Exercises and Solutions for training seminar about [Apache Maven] (http://maven.apache.org/). All projects are intended to be used for training purposes only.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
-	<img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" />
-</a>
-<br />
-<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-	Maven Course Examples
-</span> 
-by 
-<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Ingo Düppe</span> 
-is licensed under the 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a>.
+License
+=======
+Maven Course Examples by 
+Ingo Dueppe and Torsten Friebe 
+are licensed under the 
+[Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)](http://creativecommons.org/licenses/by-sa/3.0/).
+
+Continuous Integration
+======================
+[![Travis Build Status](https://travis-ci.org/tfr42/maven-course-examples.png?branch=master)](https://travis-ci.org/tfr42/maven-course-examples)

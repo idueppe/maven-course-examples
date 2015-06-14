@@ -10,6 +10,6 @@
 		out.println(timeService.getTime());
 	%>
 	<p>
-	<c:out value= "${timeService.time}"/>
+	<c:out value="${timeService.time}"/>
 </body>
 </html>

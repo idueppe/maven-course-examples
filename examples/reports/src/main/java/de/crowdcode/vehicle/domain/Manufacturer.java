@@ -8,15 +8,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
-@NamedQueries(value = {
-        @NamedQuery(name = "findManufacturerByName", query = "SELECT m FROM Manufacturer m WHERE m.name = :name"),
-})
+@NamedQuery(name = "findManufacturerByName", query = "SELECT m FROM Manufacturer m WHERE m.name = :name")
 public class Manufacturer {
 
     @Id
@@ -27,10 +24,10 @@ public class Manufacturer {
     private String name;
 
     @OneToMany(mappedBy = "manufacturer", cascade = { CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.DETACH, CascadeType.MERGE })
-    private List<Vehicle> vehicles = new ArrayList<>();
+    private List<Vehicle> vehicles = new ArrayList<Vehicle>();
     
     @OneToMany(mappedBy = "manufacturer", cascade = { CascadeType.ALL})
-    private List<Engine> ownedEngines = new ArrayList<>();
+    private List<Engine> ownedEngines = new ArrayList<Engine>();
 
     @Version
     private long version;

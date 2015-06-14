@@ -21,7 +21,7 @@
       <outputDirectory>/</outputDirectory>
       <excludes>
         <exclude>junit:junit</exclude>
-        <exclude>com.devzuz.mvnbook.proficio:proficio-store-memory</exclude>
+        <exclude>maven.course:proficio-store-memory</exclude>
       </excludes>
     </dependencySet>
   </dependencySets>

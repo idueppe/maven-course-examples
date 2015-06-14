@@ -1,0 +1,2 @@
+Auslieferung der Version: ${project.version}
+FŸr Log Datei ${log.file.name}

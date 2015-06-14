@@ -20,9 +20,9 @@ public abstract class AbstractConverter<SOURCE, TARGET> implements Converter<SOU
     @Override
     public List<TARGET> convert(Collection<? extends SOURCE> source) throws ConversionException {
         if (source == null || source.isEmpty()) {
-            return new ArrayList<>(5);
+            return new ArrayList<TARGET>(5);
         }
-        List<TARGET> result = new ArrayList<>(source.size());
+        List<TARGET> result = new ArrayList<TARGET>(source.size());
         for (SOURCE source2 : source) {
             TARGET t = convert(source2);
             if (t != null) {

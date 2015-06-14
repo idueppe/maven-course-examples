@@ -4,14 +4,14 @@ import java.util.List;
 
 public interface EntityDao<T> {
     
-    public List<T> findAll();
+    List<T> findAll();
     
-    public T find(Long id);
+    T find(Long id);
     
-    public void create(T entity);
+    void create(T entity);
     
-    public void delete(T entity);
+    void delete(T entity);
     
-    public T update(T entity);
+    T update(T entity);
 
 }

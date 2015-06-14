@@ -57,7 +57,6 @@ public class JAXBTest {
 
 	@Test
 	public void testMarshallXML() {
-//		Dictionary dictionary = generateDummyStructure();
 		Dictionary dictionary = generateFluentStructure();
 
 		String outputXml = "";
@@ -90,21 +89,6 @@ public class JAXBTest {
 	}
 
 	private ObjectFactory factory = new ObjectFactory();
-
-//	private Dictionary generateDummyStructure() {
-//		Dictionary dictionary = factory.createDictionary();
-//		Album album = factory.createAlbum();
-//		album.setArtist("Artist");
-//		album.setDiscId("discID");
-//		album.setGenre("genre");
-//		album.setYear(12345);
-//		dictionary.getAlbums().add(album);
-//		Track track = factory.createTrack();
-//		track.setTitle("title");
-//		track.setTrackNo(1);
-//		album.getTracks().add(track);
-//		return dictionary;
-//	}
 
 	private Dictionary generateFluentStructure() {
 		return factory.createDictionary()

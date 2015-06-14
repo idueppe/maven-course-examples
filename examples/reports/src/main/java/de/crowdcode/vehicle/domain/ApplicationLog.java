@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
@@ -14,13 +13,10 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@NamedQueries({
-	@NamedQuery(name="ApplicationLog.LOAD_ALL"
-			,   query="SELECT o FROM ApplicationLog o")
-})
+@NamedQuery(name = "ApplicationLog.LOAD_ALL", query = "SELECT o FROM ApplicationLog o")
 public class ApplicationLog {
 
-    @Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
@@ -31,7 +27,8 @@ public class ApplicationLog {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date timestamp;
 
-	public ApplicationLog() {}
+	public ApplicationLog() {
+	}
 
 	public ApplicationLog(String message) {
 		this.message = message;
@@ -42,16 +39,16 @@ public class ApplicationLog {
 		timestamp = new Date();
 	}
 
-    public String getMessage() {
-        return message;
-    }
+	public String getMessage() {
+		return message;
+	}
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
+	public Date getTimestamp() {
+		return timestamp;
+	}
 
 }

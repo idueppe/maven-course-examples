@@ -6,10 +6,10 @@ import de.crowdcode.vehicle.dto.EngineDto;
 
 public interface EngineController {
 
-    public List<EngineDto> byManufacturerName(String manufacturerName);
+    List<EngineDto> byManufacturerName(String manufacturerName);
     
-    public void addEngine(EngineDto engine);
+    void addEngine(EngineDto engine);
     
-    public void deleteEngine(EngineDto engine);
+    void deleteEngine(EngineDto engine);
     
 }

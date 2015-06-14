@@ -2,27 +2,23 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>course.maven</groupId>
+  <groupId>maven.course</groupId>
   <artifactId>local-scm</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
   <name>local-scm</name>
-  <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-                     
-	<scm>
-		<connection>
-			scm:local:/Users/idueppe/git/maven-course-examples:tmp
-		</connection>
-		<developerConnection>
-			scm:local:/Users/idueppe/git/maven-course-examples:tmp
-		</developerConnection>
-		<url>http://url</url>
-	</scm>
+
+  <scm>
+    <connection>
+  		scm:local:/User/tf/git/maven-course-examples:local-scm
+  	</connection>
+    <developerConnection>
+  		scm:local:/User/tf/git/maven-course-examples:local-scm
+  	</developerConnection>
+  </scm>
 
   <dependencies>
     <dependency>

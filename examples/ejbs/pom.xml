@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>maven.course</groupId>
+	<artifactId>ejbs-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+  <name>Java EE 6 multi module parent POM</name>
+	<description>Java EE 6 example with EJB 3 SLSB and SFSB prepared for JBoss AS 7.x</description>
+	<properties>
+		<jboss.home>${env.JBOSS_HOME}</jboss.home>
+		<jboss.domain>default</jboss.domain>
+    <java.version>1.6</java.version>
+	</properties>
+	<modules>
+		<module>application</module>
+		<module>sessionbeans</module>
+		<module>webclient</module>
+	</modules>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.2</version>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

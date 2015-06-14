@@ -1,13 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>course.jpa</groupId>
+	<groupId>maven.course</groupId>
 	<artifactId>jpa-filter-example</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<name>jpa course exercise</name>
-
-	<description>This is a blank exercise project for hibernate courses based on maven</description>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>jpa filter example</name>
+	<description>JPA 2.0 with Hibernate EntityManager Persistence Provider</description>
 
 	<repositories>
 		<repository>
@@ -21,11 +19,11 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.1</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -40,10 +38,9 @@
 				<filtering>true</filtering>
 				<includes>
 					<include>**/*.xml</include>
-<!-- 					<include>**/*.properties</include> -->
+					<include>**/*.properties</include>
 				</includes>
 			</resource>    
-			
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
@@ -51,27 +48,24 @@
 					<exclude>**/*.xml</exclude>
 				</excludes>
 			</resource>
-			
 		</resources>
-
 	</build>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>3.6.0.Final</version>
+			<version>3.6.10.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>1.8.0.7</version>
+			<version>1.8.0.10</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.8.2</version>
-			<type>jar</type>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -103,12 +97,14 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.13</version>
+			<version>5.1.33</version>
+      <optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>9.0-801.jdbc4</version>
+      <optional>true</optional>
 		</dependency>
 	</dependencies>
 </project>

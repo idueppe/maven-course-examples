@@ -1,9 +1,8 @@
 package com.devzuz.mvnbook.proficio.model;
 
-import junit.framework.TestCase;
-
-import java.util.ArrayList;
 import java.util.List;
+
+import junit.framework.TestCase;
 
 /**
  * Test the model.
@@ -13,7 +12,7 @@ import java.util.List;
 public class ModelTest
     extends TestCase
 {
-    private static final int ID = 123;
+	private static final int ID = 1; // magic number
 
     public void testFaq()
     {
@@ -43,7 +42,7 @@ public class ModelTest
     {
         Faq faq = new Faq();
         faq.setId( ID );
-        assertEquals( ID, faq.hashCode());
+		assertEquals(ID + 629, faq.hashCode());
     }
 
     public void testEquals()

@@ -10,17 +10,21 @@ public class VehicleDaoMock implements VehicleDao {
 
     @Override
     public List<Vehicle> findAll() {
+    	// FIXME returns null in all cases
+    	// TODO Implement method
         return null;
     }
 
     @Override
     public Vehicle find(Long id) {
+    	// FIXME returns null for all given IDs.
         return null;
     }
 
     @Override
     public void create(Vehicle entity) {
-        
+    	// XXX this mock does not support persistence
+        throw new UnsupportedOperationException("Not implemented yet!");
     }
 
     @Override

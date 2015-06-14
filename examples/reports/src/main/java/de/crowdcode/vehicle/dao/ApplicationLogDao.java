@@ -6,7 +6,7 @@ import de.crowdcode.vehicle.domain.ApplicationLog;
 
 public interface ApplicationLogDao {
 
-    public void log(ApplicationLog logEntry);
+    void log(ApplicationLog logEntry);
     
-    public List<ApplicationLog> findAll();
+    List<ApplicationLog> findAll();
 }

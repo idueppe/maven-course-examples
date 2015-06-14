@@ -7,10 +7,10 @@ import de.crowdcode.vehicle.domain.Vehicle;
 
 public interface VehicleDao extends EntityDao<Vehicle> {
 
-    public List<Vehicle> findVehicleByManufacturer(String name);
+    List<Vehicle> findVehicleByManufacturer(String name);
 
-    public Vehicle findCheapestVehicle();
+    Vehicle findCheapestVehicle();
     
-    public List<Vehicle> findVehiclesByEngineType(EngineType engineType);
+    List<Vehicle> findVehiclesByEngineType(EngineType engineType);
 
 }
