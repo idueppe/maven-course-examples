@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>maven.course</groupId>
-  <artifactId>exercises</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>exercises-lab</name>
-  <description>Exercises Labs workspace</description>
-  <modules>
-<!--     <module>jaxb-code-generation</module> -->
-    <module>jaxws-code-generation</module>
-<!--     <module>jaxws-fraction-build-cylce</module> -->
-    <module>jpa-filtering-exercise</module>
-<!--     <module>mvn.03.exercise-weather</module> -->
-<!--     <module>mvn.05.exercise-multi</module> -->
-  </modules>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>maven.course</groupId>
+    <artifactId>exercises</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>exercises-lab</name>
+    <description>Exercises Labs workspace</description>
+    <modules>
+        <!-- Noch kein Maven Project -->
+        <!--<module>jaxb-code-generation</module>-->
+        <module>jaxws-code-generation</module>
+        <!--     <module>jaxws-fraction-build-cylce</module> -->
+        <module>jpa-filtering-exercise</module>
+        <!--     <module>mvn.03.exercise-weather</module> -->
+        <!--     <module>mvn.05.exercise-multi</module> -->
+    </modules>
 </project>
