@@ -1,3 +1,2 @@
-Das Projekt funktioniert so nicht.
- - Warum?
- - Wie muss dieses Projekt umgestellt werden?
+Bitte das Projekt auf eine Multi-Projekt-Struktur umstellen.
+Bitte darauf achten, dass Konfigurationen nur einmal definiert werden (DRY-Prinzip).
