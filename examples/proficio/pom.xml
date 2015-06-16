@@ -106,6 +106,9 @@
             <goals><goal>jar</goal></goals>
           </execution>
         </executions>
+        <configuration>
+          <failOnError>false</failOnError>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
