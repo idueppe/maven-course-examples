@@ -47,6 +47,11 @@
 					<resourceDestDir>${project.build.directory}/resources-generated</resourceDestDir>
 					<sourceDestDir>${project.build.directory}/sources-generated</sourceDestDir>
 					<wsdlLocation>http://localhost:9000/services?wsdl</wsdlLocation>
+					<!-- SEE http://stackoverflow.com/questions/23814921/cannot-use-org-jvnet-jax-ws-commons-jaxws-maven-plugin-on-jdk8 -->
+					<vmArgs>
+						<vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+						<vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+					</vmArgs>
 				</configuration>
 			</plugin>
 			<plugin>
