@@ -55,6 +55,10 @@
 					<resourceDestDir>${project.build.directory}/resources-generated</resourceDestDir>
 					<sourceDestDir>${project.build.directory}/sources-generated</sourceDestDir>
 					<wsdlLocation>http://localhost:9000/services?wsdl</wsdlLocation>
+					<vmArgs>
+						<vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+						<vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+					</vmArgs>
 				</configuration>
 			</plugin>
 			<plugin>
