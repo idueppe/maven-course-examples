@@ -35,7 +35,7 @@
 			<plugin>
 				<groupId>org.jvnet.jax-ws-commons</groupId>
 				<artifactId>jaxws-maven-plugin</artifactId>
-				<version>2.3.1-b20141205.0945</version>
+				<version>2.3.1-b20150201.1248</version>
 				<executions>
 					<execution>         
 						<id>gen</id>
@@ -62,6 +62,10 @@
 					<wsdlDirectory>${project.build.directory}/resources-generated</wsdlDirectory>
 					<sourceDestDir>${project.build.directory}/sources-generated</sourceDestDir>
 					<wsdlLocation>http://localhost:9000/services?wsdl</wsdlLocation>
+					<vmArgs>
+						<vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+						<vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+					</vmArgs>
 				</configuration>
 			</plugin>
 			<plugin>
