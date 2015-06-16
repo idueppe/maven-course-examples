@@ -1,79 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>maven.course</groupId>
-	<artifactId>maven-course-examples</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>maven-course-examples</name>
-	<description>Root workspace</description>
-	<url>https://github.com/tfr42/maven-course-examples</url>
-  <scm>
-    <connection>scm:git:scm:git:https://github.com/tfr42/maven-course-examples.git</connection>
-    <developerConnection>scm:git:https://tfr42@github.com/tfr42/maven-course-examples.git</developerConnection>
-    <url>https://github.com/tfr42/maven-course-examples/</url>
-  </scm>
-	<modules>
-		<module>examples</module>
-		<module>solutions</module>
-	</modules>
-	<profiles>
-		<profile>
-			<id>exercises</id>
-			<modules>
-				<module>exercises</module>
-			</modules>
-		</profile>
-	</profiles>
-	<prerequisites>
-		<maven>[3.0.5,)</maven>
-	</prerequisites>
-  <licenses>
-    <license>
-      <name>GPLv3</name>
-      <url>http://www.gnu.org/licenses/gpl.txt</url>
-      <distribution>manual</distribution>
-      <comments>This project is published under GNU Public License v3</comments>
-    </license>
-    <license>
-      <name>CC BY-SA 3.0</name>
-      <url>http://creativecommons.org/licenses/by-sa/3.0/</url>
-      <distribution>manual</distribution>
-      <comments>Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</comments>
-    </license>
-  </licenses>
-  <developers>
-    <developer>
-      <id>id</id>
-      <name>Ingo Dueppe</name>
-      <email>info@dueppe.com</email>
-      <url>http://www.dueppe.com/</url>
-      <roles>
-        <role>Developer</role>
-      </roles>
-      <timezone>+1</timezone>
-    </developer>
-    <developer>
-      <id>tf</id>
-      <name>Torsten Friebe</name>
-      <email>tfr@users.sourceforge.net</email>
-      <url>http://javainabox.blogspot.com/</url>
-      <roles>
-        <role>Developer</role>
-      </roles>
-      <timezone>+1</timezone>
-    </developer>
-  </developers>
-  <distributionManagement>
-	<repository>
-		<id>nexus-releases</id>
-		<name>Nexus-Repository</name>
-		<url>http://localhost:8081/nexus/content/repositories/releases</url>
-	</repository>
-	<snapshotRepository>
-		<id>nexus-snapshots</id>
-		<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
-	</snapshotRepository>
-  </distributionManagement>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>maven.course</groupId>
+    <artifactId>maven-course-examples</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>maven-course-examples</name>
+    <description>Root workspace</description>
+    <url>https://github.com/idueppe/maven-course-examples</url>
+    <scm>
+        <connection>scm:git:scm:git:https://github.com/idueppe/maven-course-examples.git</connection>
+        <developerConnection>scm:git:https://idueppe@github.com/idueppe/maven-course-examples.git</developerConnection>
+        <url>https://github.com/idueppe/maven-course-examples/</url>
+    </scm>
+    <modules>
+        <module>examples</module>
+        <module>solutions</module>
+    </modules>
+    <profiles>
+        <profile>
+            <id>exercises</id>
+            <modules>
+                <module>exercises</module>
+            </modules>
+        </profile>
+    </profiles>
+    <prerequisites>
+        <maven>[3.0.5,)</maven>
+    </prerequisites>
+    <licenses>
+        <license>
+            <name>GPLv3</name>
+            <url>http://www.gnu.org/licenses/gpl.txt</url>
+            <distribution>manual</distribution>
+            <comments>This project is published under GNU Public License v3</comments>
+        </license>
+        <license>
+            <name>CC BY-SA 3.0</name>
+            <url>http://creativecommons.org/licenses/by-sa/3.0/</url>
+            <distribution>manual</distribution>
+            <comments>Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</comments>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>id</id>
+            <name>Ingo Dueppe</name>
+            <email>ingo.dueppe@crowdcode.de</email>
+            <url>http://www.dueppe.com/</url>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+            <organization>Crowdcode</organization>
+            <organizationUrl>http://www.crowdcode.io</organizationUrl>
+        </developer>
+        <developer>
+            <id>tf</id>
+            <name>Torsten Friebe</name>
+            <email>tfr@users.sourceforge.net</email>
+            <url>http://javainabox.blogspot.com/</url>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus-Repository</name>
+            <url>http://localhost:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
