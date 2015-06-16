@@ -1,6 +1,7 @@
 maven-course-examples
 ======================
-Examples, Exercises and Solutions for training seminar about [Apache Maven] (http://maven.apache.org/). All projects are intended to be used for training purposes only.
+Examples, Exercises and Solutions for training seminar about [Apache Maven] (http://maven.apache.org/).
+All projects are intended to be used for training purposes only.
 
 License
 =======
@@ -11,4 +12,4 @@ are licensed under the
 
 Continuous Integration
 ======================
-[![Travis Build Status](https://travis-ci.org/tfr42/maven-course-examples.png?branch=master)](https://travis-ci.org/tfr42/maven-course-examples)
+[![Travis Build Status](https://travis-ci.org/idueppe/maven-course-examples.png?branch=master)](https://travis-ci.org/idueppe/maven-course-examples)
