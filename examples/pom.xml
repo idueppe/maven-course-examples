@@ -33,6 +33,7 @@
     <module>reports</module>
     <module>simple-release</module>
     <module>spring-bom</module>
+	 <moduel>jarsigner-example</module>
   </modules>
   <profiles>
   	<profile>
