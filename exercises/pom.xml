@@ -15,6 +15,7 @@
         <!--     <module>jaxws-fraction-build-cylce</module> -->
         <module>jpa-filtering-exercise</module>
         <!--     <module>mvn.03.exercise-weather</module> -->
-        <!--     <module>mvn.05.exercise-multi</module> -->
+        <module>mvn.05.exercise-multi/simple-webapp</module>
+        <module>mvn.05.exercise-multi/simple-weather</module>
     </modules>
 </project>
